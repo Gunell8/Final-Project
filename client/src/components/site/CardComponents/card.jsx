@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import "./style.scss";
+import { useNavigate } from "react-router-dom";
 export const Card = () => {
+  const navigate=useNavigate()
   const [data, setData] = useState([]);
   const getData = async () => {
     const res = await axios.get("http://localhost:8080/museums");
@@ -20,7 +22,7 @@ export const Card = () => {
             {data.map((d) => (
               <div className="card">
                 <img src={d.image} alt="" />
-                <h1>{d.name}</h1>
+                <h1 onClick={()=>navigate(d._id)}>{d.name}</h1>
                 <h3>{d.price}</h3>
               </div>
             ))}

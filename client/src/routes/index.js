@@ -1,6 +1,7 @@
 import { About } from "../Pages/site/About/About";
 import { Blog } from "../Pages/site/Blog/Blog";
 import { Contact } from "../Pages/site/Contact/Contact";
+import { Detail } from "../Pages/site/Detail/Detail";
 import { Event } from "../Pages/site/Event/Event";
 import { Gallery } from "../Pages/site/Gallery/Gallery";
 import { Home } from "../Pages/site/Home/Home";
@@ -46,6 +47,10 @@ export const Router = [
                     path: "/projects",
                     element: <Projects/>
                 },
+                {
+                    path:"/shop/:id",
+                    element:<Detail/>
+                }
             ]
 
     }
