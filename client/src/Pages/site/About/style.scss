@@ -1,0 +1,253 @@
+#about {
+  background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+  padding-bottom: 200px;
+  .about {
+    padding-top: 150px;
+    .down {
+      display: flex;
+      gap: 80px;
+
+      .left {
+        h2 {
+          margin-top: 0px;
+          margin-bottom: 10px;
+          font-family: "Montserrat", sans-serif;
+          font-family: "Righteous", cursive;
+          color: #000;
+          font-size: 54px;
+          line-height: 1.4em;
+          font-weight: 400;
+          max-width: 529px;
+        }
+        p {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 1.4em;
+        }
+        .p {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 1.4em;
+          max-width: 600px;
+        }
+        .sec-p {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 1.4em;
+          max-width: 600px;
+        }
+      }
+      .right {
+        width: 200px;
+        height: 200px;
+        img {
+          width: 550px;
+          height: 800px;
+          position: relative;
+          z-index: 1;
+          border-radius: 400px;
+          box-shadow: 20px 10px 20px 20px rgb(182, 181, 181);
+        }
+      }
+    }
+  }
+  .awards {
+    padding-top: 300px;
+    h2 {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-family: "Righteous", cursive;
+      color: #000;
+      font-size: 72px;
+      line-height: 1.4em;
+      text-align: center;
+      font-weight: 400;
+    }
+    .award-down {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 50px;
+      h6 {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-family: "Righteous", cursive;
+        color: #000;
+        font-size: 24px;
+        line-height: 1.4em;
+        font-weight: 400;
+      }
+    }
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+    }
+  }
+  .about-video {
+    padding: 80px 0;
+    .about-with-video {
+      width: 100%;
+      position: relative;
+      .video {
+        .img {
+          position: relative;
+          .image {
+            background-image: url("../../../assests/images/about.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 560px;
+          }
+          .play-video {
+            position: absolute;
+            bottom: 50%;
+            z-index: 2;
+            -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+            right: 0;
+            left: 0;
+            text-align: center;
+            a {
+              display: inline-block;
+              width: 85px;
+              height: 85px;
+              font-size: 25px;
+              border-radius: 50%;
+              line-height: 88px;
+              display: inline-block;
+              background-color: #000000;
+              transition: all 0.4s;
+              border: 4px solid #fff;
+              cursor: pointer;
+              &:hover {
+                -webkit-text-fill-color: #396cf0;
+                border: 4px solid #396cf0;
+              }
+              .fa-solid {
+                font-size: 30px;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+      .youtube-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000ef;
+        iframe {
+          border: 0;
+          box-shadow: 0 0 1px 0 rgba(194, 207, 240, 0.3);
+        }
+        .close {
+          position: absolute;
+          right: 50px;
+          top: 50px;
+          font-size: 36px;
+          color: #e9ecef;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .nothing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 200px;
+   
+    }
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-family: "Righteous", cursive;
+      font-size: 70px;
+      font-weight: 400;
+    }
+  }
+  #app {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-button-prev {
+    --swiper-navigation-size: 24px;
+    --swiper-navigation-color: black;
+    height: 20px;
+    cursor: pointer;
+  }
+  .swiper-button-next {
+    --swiper-navigation-color: black;
+    --swiper-navigation-size: 24px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .sliders{
+  .img{
+    display: flex;
+    justify-content: center;
+    img{
+        width: 100px;
+        height: 120px;
+        border-radius: 40%;
+    }
+  }
+  h4{
+    font-size: 24px;
+    line-height: 1.4em;
+    max-width: 800px;
+    margin: 10px 0;
+  }
+  p{
+    font-family: Inter, sans-serif;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  }
+}

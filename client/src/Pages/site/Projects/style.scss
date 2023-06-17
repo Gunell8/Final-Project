@@ -1,0 +1,150 @@
+#projects{
+    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    padding-top: 100px;
+    .projects{
+        h2{
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+                color: #000;
+            font-size: 55px;
+            line-height: 1.4em;
+            font-weight: 400px;
+        }
+       .frst{
+        display: flex;
+        justify-content: space-around;
+        .left{
+            img{
+                width: 400px;
+                height: 200px;
+            }
+        p{
+    font-family: Inter, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: 600;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+            color: #000;
+            font-size: 32px;
+            line-height: 1.4em;
+            font-weight: 400;
+        }
+
+        }
+        .right{
+            img{
+                width: 400px;
+                height: 500px;
+            }
+        p{
+    font-family: Inter, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: 600;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+            color: #000;
+            font-size: 32px;
+            line-height: 1.4em;
+            font-weight: 400;
+        }
+
+        }
+       }
+       .second{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        .left{
+            img{
+                width: 500px;
+                height: 300px;
+            }
+        p{
+    font-family: Inter, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: 600;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+            color: #000;
+            font-size: 32px;
+            line-height: 1.4em;
+            font-weight: 400;
+            max-width: 300px;
+        }
+
+        }
+        .right{
+            img{
+                width: 500px;
+                height: 300px;
+            }
+        p{
+    font-family: Inter, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: 600;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+            color: #000;
+            font-size: 32px;
+            line-height: 1.4em;
+            font-weight: 400;
+            max-width: 400px;
+            
+        }
+
+        }
+       }
+       .third{
+        margin-left: 50px;
+        margin-top: 100px;
+        .left{
+            img{
+                width: 500px;
+                height: 300px;
+            }
+        p{
+    font-family: Inter, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: 600;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+            color: #000;
+            font-size: 32px;
+            line-height: 1.4em;
+            font-weight: 400;
+        }
+
+        }
+       }
+    }
+}

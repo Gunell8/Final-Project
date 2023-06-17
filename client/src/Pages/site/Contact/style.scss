@@ -1,0 +1,187 @@
+#contact {
+    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    padding-bottom: 150px;
+  .contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-family: "Righteous", cursive;
+      color: #000;
+      font-size: 60px;
+      line-height: 1.4em;
+      font-weight: 600;
+    }
+  .down{
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    .left{
+        .frst{
+            p{
+                font-size: 18px;
+                line-height: 1.4em;
+                font-family: Inter, sans-serif;
+                color: #333;
+                font-weight: 500;
+                a{
+                    color: #000;
+                    &:hover{
+                      text-decoration: none;
+                    }
+                   }
+            }
+        }
+        .sec{
+            h5{
+                margin-top: 0px;
+                margin-bottom: 10px;
+                font-family: "Montserrat", sans-serif;
+                font-family: "Righteous", cursive;
+                color: #000;
+                font-size: 24px;
+                line-height: 1.4em;
+                font-weight: 400;
+            }
+            p{
+                font-size: 18px;
+                line-height: 1.4em;
+                font-family: Inter, sans-serif;
+                color: #333;
+                font-weight: 500;
+            }
+            .p{
+                font-size: 18px;
+                line-height: 1.4em;
+                font-family: Inter, sans-serif;
+                color: #333;
+                font-weight: 500;
+                max-width: 220px;
+
+            }
+            a{
+                color: #000;
+                font-family: Inter, sans-serif;
+                color: #333;
+                font-size: 16px;
+                line-height: 1.4em;
+                font-weight: 500;
+                &:hover{
+                  text-decoration: none;
+                }
+               }
+        }
+    }
+    .right{
+     button{
+        padding: 12px 40px;
+        background-color: #000;
+        transition: all 300ms ease-in-out;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px;
+        &:hover{
+            box-shadow: 1px 1px 10px 1px black;
+          }
+     }
+     .one{
+       label{
+        display: block;
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-family: Inter, sans-serif;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.4em;
+       }
+       input{
+        height: 40px;
+        width: 400px;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #fff;
+        border-radius: 0px;
+        background-color: #fff;
+        transition: border-color 300ms ease-in-out;
+        outline: none;
+        &:hover {
+            border: 1px solid green;
+          }
+          &:focus {
+            border: 1px solid green;
+          }
+       }
+     }
+     .two{
+       label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-family: Inter, sans-serif;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.4em;
+       }
+       input{
+        height: 40px;
+        width: 400px;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #fff;
+        border-radius: 0px;
+        background-color: #fff;
+        transition: border-color 300ms ease-in-out;
+        outline: none;
+        &:hover {
+            border: 1px solid green;
+          }
+          &:focus {
+            border: 1px solid green;
+          }
+       }
+     }
+     .three{
+       label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-family: Inter, sans-serif;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.4em;
+       }
+       input{
+        height: 80px;
+        width: 400px;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #fff;
+        border-radius: 0px;
+        background-color: #fff;
+        transition: border-color 300ms ease-in-out;
+        outline: none;
+        &:hover {
+            border: 1px solid green;
+          }
+          &:focus {
+            border: 1px solid green;
+          }
+       }
+     }
+    }
+  }
+    }
+}

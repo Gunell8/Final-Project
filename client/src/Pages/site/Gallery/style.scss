@@ -1,0 +1,90 @@
+#gallery {
+    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    padding-bottom: 100px;
+  .gallery {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-family: "Righteous", cursive;
+      color: #000;
+      font-size: 60px;
+      line-height: 1.4em;
+      font-weight: 600;
+    }
+    .galery-photo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        .img1{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        
+        .imgg1{
+            width: 347px;
+            height: 430px;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover{
+                transform: scale(1.02);
+            }
+        }
+        .imgg2{
+           width: 347px;
+           height: 330px;
+           cursor: pointer;
+           transition: all 0.4s;
+           &:hover{
+               transform: scale(1.02);
+           }
+        }
+        .imgg3{
+           width: 350px;
+           height: 450px;
+           cursor: pointer;
+           transition: all 0.4s;
+           &:hover{
+               transform: scale(1.02);
+           }
+        }
+    }
+        .img2{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        
+        .imgg4{
+            width: 347px;
+            height: 530px;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover{
+                transform: scale(1.02);
+            }
+        }
+        .imgg5{
+            width: 347px;
+            height: 400px;
+           cursor: pointer;
+           transition: all 0.4s;
+           &:hover{
+               transform: scale(1.02);
+           }
+        }
+        .imgg6{
+           width: 350px;
+           height: 350px;
+           cursor: pointer;
+           transition: all 0.4s;
+           &:hover{
+               transform: scale(1.02);
+           }
+        }
+    }
+    }
+  
+    }
+}

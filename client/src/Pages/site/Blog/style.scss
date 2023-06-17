@@ -1,0 +1,58 @@
+#latest{
+    margin: 0;
+    background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
+    .latest{
+        padding-top: 150px;
+        h3{
+            margin-top: 150px;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Righteous', cursive;
+                color: #000;
+            font-size: 55px;
+            margin: 0;
+            line-height: 1.4em;
+            font-weight: 400px;
+           
+        }
+        .latest-card{
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            h5{
+                font-family: Arial,sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                color: #333;
+                cursor: pointer;
+            }
+            h4{
+                margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-size: 24px;
+    line-height: 1.4em;
+    font-weight: 400;
+    max-width: 300px;
+    cursor: pointer;
+            }
+            p{
+                font-family: Inter, sans-serif;
+                color: #333;
+                font-size: 16px;
+                line-height: 1.4em;
+                font-weight: 500;
+                cursor: pointer;
+            }
+          .latest-img{
+              width: 800px;
+              img{
+                  width: 100%;
+              }
+          }
+        }
+
+    }
+}

@@ -1,0 +1,53 @@
+header{
+    padding: 10px 0;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+  .nav{
+    width: 100%;
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .logo{
+            img{
+                width: 200px;
+            }
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+    li{
+        list-style: none;
+    }
+    a{
+        color: #000;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        &:hover{
+            text-decoration: underline;
+        }
+        &.active {
+            text-decoration: underline;
+          }
+    }
+        
+        }
+        .card-count{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            .count{
+                background-color: black;
+                border-radius: 50%;
+               width: 20px;
+               height: 20px;
+               color: white;
+            }
+        }
+    }
+}  
+}
