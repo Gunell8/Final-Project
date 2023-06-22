@@ -8,11 +8,11 @@ import {
   getData,
   updateData,
 } from "../../../redux/slice/galeryDataSlice";
+import { GallerySchema } from "../AddGallery/schema";
 export const AdminGallery = () => {
   const dispatch = useDispatch();
   const gallery = useSelector((state) => state.gallery);
   const [editData, setEditData] = useState(false);
-  const [postImage, setPostImage] = useState("");
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -20,44 +20,28 @@ export const AdminGallery = () => {
     useFormik({
       initialValues: {
         id: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        gender: "",
-        doctorJob: "",
-        location: "",
-        phone: "",
-        money: "",
-        hour: "",
-        star: "",
+        name: "",
+        price: "",
+        title1: "",
+        title2: "",
+        title3: "",
+        title4: "",
+        about: "",
+        seller: "",
+        support: "",
+        framing: "",
+        type: "",
+        authenticity: "",
         image: "",
+        dimensionscm: "",
+        medium: "",
       },
-      // validationSchema: doctorsSchema,
+      // validationSchema: GallerySchema,
       onSubmit: (values) => {
-        // postImage ? (values.image = postImage) : "";
-        dispatch(updateData(values)).then(() => dispatch(getData("")));
+        dispatch(updateData(values)).then(() => dispatch(getData()));
       },
     });
-  // for image
-  const convertToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
 
-  const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    setPostImage(base64);
-  };
   const handleEdit = async (id) => {
     setEditData(true);
     gallery.data?.map((element) => {
@@ -133,8 +117,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="name"
+                    name="name"
                     type="text"
                     onChange={handleChange}
                     value={values.name}
@@ -159,8 +143,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="price"
+                    name="price"
                     type="text"
                     onChange={handleChange}
                     value={values.price}
@@ -185,8 +169,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="title4"
+                    name="title4"
                     type="text"
                     onChange={handleChange}
                     value={values.title4}
@@ -211,8 +195,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="about"
+                    name="about"
                     type="text"
                     onChange={handleChange}
                     value={values.about}
@@ -237,8 +221,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="seller"
+                    name="seller"
                     type="text"
                     onChange={handleChange}
                     value={values.seller}
@@ -265,8 +249,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="title1"
+                    name="title1"
                     type="text"
                     onChange={handleChange}
                     value={values.title1}
@@ -291,8 +275,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="title2"
+                    name="title2"
                     type="text"
                     onChange={handleChange}
                     value={values.title2}
@@ -317,8 +301,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="title3"
+                    name="title3"
                     type="text"
                     onChange={handleChange}
                     value={values.title3}
@@ -343,8 +327,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="medium"
+                    name="medium"
                     type="text"
                     onChange={handleChange}
                     value={values.medium}
@@ -369,8 +353,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="dimensionscm"
+                    name="dimensionscm"
                     type="text"
                     onChange={handleChange}
                     value={values.dimensionscm}
@@ -397,8 +381,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="support"
+                    name="support"
                     type="text"
                     onChange={handleChange}
                     value={values.support}
@@ -423,11 +407,11 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="framing"
+                    name="framing"
                     type="text"
                     onChange={handleChange}
-                    value={values.support}
+                    value={values.framing}
                     placeholder="Framing"
                   />
                   {errors.framing && touched.framing && (
@@ -449,8 +433,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="type"
+                    name="type"
                     type="text"
                     onChange={handleChange}
                     value={values.type}
@@ -475,8 +459,8 @@ export const AdminGallery = () => {
                     </label>
                   </p>
                   <input
-                    id="firstName"
-                    name="firstName"
+                    id="authenticity"
+                    name="authenticity"
                     type="text"
                     onChange={handleChange}
                     value={values.authenticity}
@@ -495,7 +479,8 @@ export const AdminGallery = () => {
                   )}
                 </div>
 
-                <div className="input-image">
+           
+                <div className="input-control">
                   <p>
                     <label htmlFor="image" className="m-2">
                       Image
@@ -504,12 +489,22 @@ export const AdminGallery = () => {
                   <input
                     id="image"
                     name="image"
-                    type="file"
-                    onChange={(e) => {
-                      handleFileUpload(e);
-                    }}
+                    type="text"
+                    onChange={handleChange}
+                    value={values.image}
                     placeholder="Image"
                   />
+                  {errors.image && touched.image && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.image}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
