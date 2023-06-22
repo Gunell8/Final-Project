@@ -23,32 +23,31 @@ export const Navbar = () => {
           <li className="nav-menu">
             <Link to={"/admin/gallery-list"}>
               <div className="icon">
-                <i className="fa-solid fa-user-doctor"></i>
-              </div>
+              <i className="fa-solid fa-photo-film"></i>
+                            </div>
               Galeries
             </Link>
           </li>
           <li className="nav-menu">
-            <Link to={"/admin/gallery-list"}>
+            <Link to={"/admin/add-gallery"}>
               <div className="icon">
-                <i className="fa-solid fa-user-doctor"></i>
-              </div>
+              <i className="fa-solid fa-folder-plus"></i>
+                            </div>
               Add Galeries
             </Link>
           </li>
           <li className="nav-menu">
             <Link to={"/admin/users-list"}>
               <div className="icon">
-                <i className="fa-solid fa-hospital-user"></i>
-              </div>
+              <i class="fa-solid fa-users"></i>              </div>
               Users
             </Link>
           </li>
           <li className="nav-menu">
             <Link to={"/admin/users-list"}>
               <div className="icon">
-                <i className="fa-solid fa-hospital-user"></i>
-              </div>
+              <i className="fa-solid fa-user-plus"></i>
+                            </div>
               Add Users
             </Link>
           </li>

@@ -1,6 +1,7 @@
 #admin-header {
     width: 100%;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #cdcece;
+    background-color: #fff;
     background-image: url('../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png');
     position: fixed;
     z-index: 6;
@@ -23,7 +24,8 @@
           .setting {
             width: 36px;
             height: 36px;
-            background-color: rgba(126, 152, 216);
+            // background-color: rgba(126, 152, 216);
+            border: 1px solid #1babbe;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -33,12 +35,6 @@
             .fa-solid {
               color: #305ccc;
               font-size: 14px;
-            }
-            &:hover {
-              background-color: #305ccc;
-              .fa-solid {
-                color: #fff;
-              }
             }
           }
         }
@@ -54,9 +50,9 @@
             -webkit-transition: all 0.4s;
             transition: all 0.4s;
             border-radius: 5px;
-            background-color: rgba(126, 152, 216, 0.1);
+            background-color: #1babbe;
             border: 1px solid rgba(57, 108, 240, 0.1);
-            color: #305ccc;
+            color: #fff;
             -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
             box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
             .fa-solid {
@@ -64,7 +60,7 @@
               font-size: 12px;
             }
             &:hover {
-              background-color: #305cccb0;
+              background-color: #0b8797;
               color: #fff;
             }
           }

@@ -1,3 +1,4 @@
+import { AddGallery } from "../Pages/admin/AddGallery";
 import { Users } from "../Pages/admin/Users";
 import Dashboard from "../Pages/admin/dashboard";
 import { AdminGallery } from "../Pages/admin/gallery";
@@ -70,6 +71,10 @@ export const Router = [
           {
             path: "gallery-list",
             element: <AdminGallery/>,
+          },
+          {
+            path: "add-gallery",
+            element: <AddGallery/>,
           },
           {
             path: "users-list",

@@ -1,14 +1,17 @@
 .admin-navbar {
     width: 20%;
     height: 100%;
-    border-right: 1px solid #e9ecef;
+    border-right: 1px solid #cdcece;
+    background-color: #ffffff;
     background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
     position: fixed;
     top: 0;
     z-index: 7;
     .nav {
       width: 100%;
-      padding: 20px 40px;
+      padding: 16.5px 0px;
+      padding-left: 30px;
+    border-bottom: 1px solid #cdcece;
       .logo{
         img{
             width: 200px;
@@ -24,9 +27,9 @@
         .nav-menu {
           margin-top: 15px;
           .icon {
-            width: 36px;
-            height: 36px;
-            background-color: rgba(126, 152, 216, 0.1);
+            width: 40px;
+            height: 38px;
+            background-color: rgba(181, 181, 184, 0.541);
             border-radius: 5px;
             display: flex;
             justify-content: center;
@@ -34,15 +37,15 @@
             cursor: pointer;
             transition: all 0.3s;
             .fa-solid{
-              font-size: 13px;
+              font-size: 15px;
             }
           }
           a {
             color: black;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
             letter-spacing: 1px;
-            transition: all 0.4s;
+            transition: all 0.3s;
             position: relative;
             display: flex;
             align-items: center;
@@ -50,10 +53,10 @@
             text-decoration: none;
             
             &:hover {
-              color: #396cf0;
+              color: #1babbe;
             }
             &.active {
-              color: #396cf0;
+              color: #1babbe;
             }
           }
           ul {
