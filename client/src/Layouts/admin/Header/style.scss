@@ -1,0 +1,76 @@
+#admin-header {
+    width: 100%;
+    border-bottom: 1px solid #e9ecef;
+    background-image: url('../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png');
+    position: fixed;
+    z-index: 6;
+    .header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-image: url('../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png');
+      .header-body {
+        width: 80%;
+        padding: 15px 0;
+       display: flex;
+       justify-content: flex-end;
+       padding-right: 80px;
+        margin-left: 310px;
+        .settings {
+            display: flex;
+            column-gap: 8px;
+            align-items: center;
+          .setting {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(126, 152, 216);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            .fa-solid {
+              color: #305ccc;
+              font-size: 14px;
+            }
+            &:hover {
+              background-color: #305ccc;
+              .fa-solid {
+                color: #fff;
+              }
+            }
+          }
+        }
+  
+        .btn {
+          button {
+            padding: 8px 10px;
+            outline: 0;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            -webkit-transition: all 0.4s;
+            transition: all 0.4s;
+            border-radius: 5px;
+            background-color: rgba(126, 152, 216, 0.1);
+            border: 1px solid rgba(57, 108, 240, 0.1);
+            color: #305ccc;
+            -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+            box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+            .fa-solid {
+              margin-right: 8px;
+              font-size: 12px;
+            }
+            &:hover {
+              background-color: #305cccb0;
+              color: #fff;
+            }
+          }
+        }
+      }
+ 
+    }
+  
+  }

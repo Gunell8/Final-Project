@@ -1,3 +1,6 @@
+import { Users } from "../Pages/admin/Users";
+import Dashboard from "../Pages/admin/dashboard";
+import { AdminGallery } from "../Pages/admin/gallery";
 import { About } from "../Pages/site/About/About";
 import { Blog } from "../Pages/site/Blog/Blog";
 import { Contact } from "../Pages/site/Contact/Contact";
@@ -7,6 +10,7 @@ import { Gallery } from "../Pages/site/Gallery/Gallery";
 import { Home } from "../Pages/site/Home/Home";
 import { Projects } from "../Pages/site/Projects/Projects";
 import { Shop } from "../Pages/site/Shop/Shop";
+import AdminRoot from "../components/admin/AdminRoot";
 import { MainRoot } from "../components/site/MainRoot";
 
 export const Router = [
@@ -53,5 +57,25 @@ export const Router = [
                 }
             ]
 
-    }
+    },
+
+    {
+        path: "/admin",
+        element: <AdminRoot />,
+        children: [
+          {
+            path: "/admin",
+            element: <Dashboard />,
+          },
+          {
+            path: "gallery-list",
+            element: <AdminGallery/>,
+          },
+          {
+            path: "users-list",
+            element: <Users />,
+          },
+        ],
+      },
+    
 ]
