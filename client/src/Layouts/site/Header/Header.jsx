@@ -20,11 +20,11 @@ export const Header = () => {
             <li><NavLink to="/shop">Products</NavLink></li>
             <li><NavLink to="/projects">Projects</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
+            <li><NavLink to="/wishlist">Wishlist</NavLink></li>
           
           </ul>
           <div className="card-count">
-          <NavLink to="/wishlist">
-            Cart  </NavLink> <div className="count">0</div>
+            Cart  <div className="count">0</div>
            
           </div>
         </nav>

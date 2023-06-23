@@ -2,15 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./style.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { addToWishlist } from "../../../redux/slice/wishlistSlice";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addToWishlist } from "../../../redux/slice/wishlistSlice";
 export const Detail = () => {
   const [data, setData] = useState("");
   const params = useParams();
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const wishlist = useSelector((state) => state.wishlist);
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const wishlist = useSelector((state) => state.wishlist);
 
   const detail = async () => {
     const res = await axios.get(`http://localhost:8080/museums/${params.id}`);
@@ -39,7 +39,7 @@ export const Detail = () => {
                 </ul>
               </div>
               <div className="btn">
-                <button onClick={() => navigate("/")}>Go Back Home</button>
+                {/* <button onClick={() => navigate("/")}>Go Back Home</button>
                 <button
                   disabled={
                     wishlist.data.find((elem) => elem._id === data._id)
@@ -51,7 +51,7 @@ export const Detail = () => {
                   {wishlist.data.find((elem) => elem._id === data._id)
                     ? "Already Added"
                     : "Add To Wishlist"}
-                </button>
+                </button> */}
               </div>{" "}
               <div className="right-down">
                 <p>{data.about}</p>

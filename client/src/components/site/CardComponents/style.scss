@@ -84,8 +84,17 @@
         color: white;
         font-size: 20px;
         top: 3px;
-        &:hover{
-          color: red;
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          .fa-solid{
+            color: rgb(218, 0, 0);
+          }
+          .fa-regular{
+            color: rgb(218, 0, 0);
+          }
         }
        }
         img {
