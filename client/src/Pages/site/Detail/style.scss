@@ -35,6 +35,11 @@
           font-weight: 600;
         }
       }
+      .btn{
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+      }
       button {
         padding: 12px 40px;
         background-color: #000;

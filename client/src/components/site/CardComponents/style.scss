@@ -76,8 +76,18 @@
       justify-content: center;
       gap: 120px;
       .card {
+        position: relative;
         width: 280px;
-
+       .heart{
+        position: absolute;
+        left: 258px;
+        color: white;
+        font-size: 20px;
+        top: 3px;
+        &:hover{
+          color: red;
+        }
+       }
         img {
           box-shadow: 5px 5px 20px 0px rgb(182, 181, 181);
           width: 100%;

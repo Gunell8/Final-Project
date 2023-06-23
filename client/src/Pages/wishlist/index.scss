@@ -1,0 +1,82 @@
+#wishlist-page {
+    .wishlist-page {
+      padding: 60px 0;
+      width: 100%;
+      background-image: url(../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    }
+    .fav-gallery {
+      padding: 20px 0;
+      background-image: url(../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 60px;
+        .card {
+          width: 49%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
+          border-radius: 5px;
+          gap: 30px;
+          h2{
+            text-align: center;
+            margin-right: 70px;
+            font-family: "Montserrat", sans-serif;
+            font-family: "Righteous", cursive;
+            color: #000;
+            font-size: 20px;
+            line-height: 1.4em;
+            font-weight: 600;
+            max-width: 600px;
+          }
+          .image {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding: 10px;
+            img {
+              max-width: 100%;
+              height: auto;
+              -webkit-transition: all 0.5s;
+              transition: all 0.5s;
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        button {
+          padding: 10px 20px;
+          outline: 0;
+          cursor: pointer;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+          -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+          border-radius: 5px;
+          background-color: rgba(57, 108, 240, 0.1);
+          border: 1px solid rgba(57, 108, 240, 0.1);
+          color: #396cf0;
+          -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+          box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+          font-size: 15px;
+          &:hover {
+            background-color: #305ccc;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  

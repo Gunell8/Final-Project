@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import { AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -33,6 +33,9 @@ export const Card = () => {
           <div className="cards">
             {gallery.data.map((d) => (
               <div className="card">
+                <div className="heart">
+                <AiFillHeart/>
+                </div>
                 <img src={d.image} alt="" />
                 <Link to={`/shop/${d._id}`}>
                   <h1>{d.name}</h1>

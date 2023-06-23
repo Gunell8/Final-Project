@@ -23,7 +23,9 @@ export const Header = () => {
           
           </ul>
           <div className="card-count">
-            Cart <div className="count"></div>
+          <NavLink to="/wishlist">
+            Cart  </NavLink> <div className="count">0</div>
+           
           </div>
         </nav>
        </div>
