@@ -1,49 +1,70 @@
-#detail{
-    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
-    padding-top: 100px;
-    .detail{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        .left{
-            img{
-                width: 500px;
-                height: 700px;
-            }
-        }
-        .right{
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-            .right-up{
-             h5{
-                margin-bottom: 10px;
-                font-family: 'Montserrat', sans-serif;
-                font-family: 'Righteous', cursive;
-                color: #000;
-                font-size: 48px;
-                line-height: 1.3em;
-                font-weight: 400;
-             }
-             h6{
-                font-family: Inter, sans-serif;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.4em;
-    font-weight: 500;
-             }
-            }
-            .right-down{
-             p{
-                font-family: Inter, sans-serif;
-                color: #333;
-                font-size: 16px;
-                line-height: 1.4em;
-                font-weight: 500;
-             }
-            }
-        }
+#detail {
+  background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+  padding-top: 100px;
+  .detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    .left {
+      img {
+        width: 500px;
+        height: 700px;
+      }
     }
+    .right {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      .right-up {
+        h5 {
+          margin-bottom: 10px;
+          font-family: "Montserrat", sans-serif;
+          font-family: "Righteous", cursive;
+          color: #000;
+          font-size: 48px;
+          line-height: 1.3em;
+          font-weight: 600;
+        }
+        h6 {
+          font-family: Inter, sans-serif;
+          color: #333;
+          font-size: 16px;
+          line-height: 1.4em;
+          font-weight: 600;
+        }
+      }
+      button {
+        padding: 12px 40px;
+        background-color: #000;
+        transition: all 300ms ease-in-out;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+      }
+      .right-down {
+        p {
+          font-family: Inter, sans-serif;
+          color: #333;
+          font-size: 16px;
+          line-height: 1.4em;
+          font-weight: 600;
+        }
+        span {
+          font-family: Inter, sans-serif;
+          color: #333;
+          font-size: 16px;
+          line-height: 1.4em;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: black;
 }

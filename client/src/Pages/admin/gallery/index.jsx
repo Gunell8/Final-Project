@@ -36,7 +36,7 @@ export const AdminGallery = () => {
         dimensionscm: "",
         medium: "",
       },
-      // validationSchema: GallerySchema,
+      validationSchema: GallerySchema,
       onSubmit: (values) => {
         dispatch(updateData(values)).then(() => dispatch(getData()));
       },
@@ -79,7 +79,7 @@ export const AdminGallery = () => {
             <div className="card">
               <img src={d.image} alt="" />
               <h1>{d.name}</h1>
-              <h3>{d.price}</h3>
+              <h3>$ {d.price} USD</h3>
               <div className="btn">
                 <button
                   className="deleteBtn"

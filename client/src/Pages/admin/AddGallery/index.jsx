@@ -35,9 +35,9 @@ export const AddGallery = () => {
     });
 
   return (
-    <div id="add-doctor">
+    <div id="add-gallery">
     <Helmet>
-      <title>Doctris - Add Doctor</title>
+      <title>Gallery - Add Gallery</title>
       <meta name="description" content="test on react-helmet" />
       <meta name="theme-color" content="#ccc" />
     </Helmet>
@@ -445,7 +445,7 @@ export const AddGallery = () => {
             </div>
             <div className="btn">
               <button type="submit" className="btn btn-success mt-2">
-                Update
+                Add
               </button>
             </div>
           </form>

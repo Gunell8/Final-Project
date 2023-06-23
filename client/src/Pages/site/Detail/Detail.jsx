@@ -23,7 +23,7 @@ export const Detail = () => {
                 <div className="right">
                    <div className="right-up">
                    <h5>{data.name}</h5>
-                    <h6>{data.price}</h6>
+                    <h6>$ {data.price} USD</h6>
                  <ul>
                     <li>{data.title1}</li>
                     <li>{data.title2}</li>
@@ -31,19 +31,22 @@ export const Detail = () => {
                     <li>{data.title4}</li>
                  </ul>
                    </div>
+                   <button>Add to Cart</button>
                    <div className="right-down">
                     <p>
                         {data.about}
                     </p>
-                     <p>About the seller: {data.seller}</p>
-                     <p>Medium: {data.medium}</p>
-                     <p>Dimensionscm inch: {data.dimensionscm}</p>
-                     <p>Support: {data.support}</p>
-                     <p>Framing: {data.framing}</p>
-                     <p>Type: {data.type}</p>
-                     <p>Authenticity: {data.authenticity}</p>
-                     <p>Signature: {data.signature}</p>
-                     <p>Collector’s Guide: : {data.collectors}</p>
+                   <div className="display">
+                   <p>About the seller: <span>{data.seller}</span> </p>
+                     <p>Medium:<span>{data.medium}</span></p> 
+                     <p>Dimensionscm inch:<span>{data.dimensionscm}</span> </p>
+                     <p>Support:<span> {data.support}</span></p>
+                     <p>Framing:<span>{data.framing}</span> </p>
+                     <p>Type:<span>{data.type}</span> </p>
+                     <p>Authenticity:<span>{data.authenticity}</span> </p>
+                     <p>Signature:<span>{data.signature}</span> </p> 
+                     <p>Collector’s Guide:<span>{data.collectors}</span> </p> 
+                   </div>
                    </div>
 
                 </div>
