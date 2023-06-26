@@ -56,6 +56,7 @@ export const Header = () => {
             <li><NavLink to="/shop">Products</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/wishlist">Wishlist</NavLink></li>
+            <li><NavLink to="/login">Login</NavLink></li>
           
           </ul>
           <div className="card-count">

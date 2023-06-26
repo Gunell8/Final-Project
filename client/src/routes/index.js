@@ -9,7 +9,10 @@ import { Detail } from "../Pages/site/Detail/Detail";
 import { Event } from "../Pages/site/Event/Event";
 import { Gallery } from "../Pages/site/Gallery/Gallery";
 import { Home } from "../Pages/site/Home/Home";
+import LoginPage from "../Pages/site/Login";
+import SignInForAdmin from "../Pages/site/Login";
 import { Projects } from "../Pages/site/Projects/Projects";
+import SignupPage from "../Pages/site/Register";
 import { Shop } from "../Pages/site/Shop/Shop";
 import WishListPage from "../Pages/wishlist/wishlist";
 import AdminRoot from "../components/admin/AdminRoot";
@@ -60,7 +63,15 @@ export const Router = [
                 {
                     path:"/wishlist",
                     element:<WishListPage/>
-                }
+                },
+                {
+                    path:"/login",
+                    element:<LoginPage/>
+                },
+                {
+                    path:"/register",
+                    element:<SignupPage/>
+                },
             ]
 
     },
