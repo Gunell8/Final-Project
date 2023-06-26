@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./style.scss";
-import { patientsSchema } from "./schema";
+import { usersSchema } from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 const SignupPage = () => {
   const [postImage, setPostImage] = useState("");
   const dispatch = useDispatch();
-  const doctors = useSelector((state) => state.doctors);
   const navigate = useNavigate();
-  useEffect(() => {
-    // dispatch(getData(""));
-  }, []);
 
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
@@ -22,14 +18,12 @@ const SignupPage = () => {
         lastName: "",
         email: "",
         password: "",
-        doctor: "",
-        job: "",
         birthday: "",
         address: "",
         phone: "",
         image: "",
       },
-      validationSchema: patientsSchema,
+      validationSchema: usersSchema,
       onSubmit: async (values) => {
         values.image = postImage;
         const checkUser = await axios
@@ -38,11 +32,8 @@ const SignupPage = () => {
           })
           .post("http://localhost:8080/register", values)
           .then((res) => {
-            // dispatch(patientData(res.data.patient));
             navigate("/");
           });
-        // dispatch(patientData(checkUser.data.patient));
-        // checkUser.status === 201 && navigate("/");
         resetForm();
       },
     });
@@ -294,54 +285,7 @@ const SignupPage = () => {
                   )}
                 </div>
               </div>
-              <div className="for-select">
-                <div className="select">
-                  <select
-                    id="doctor"
-                    name="doctor"
-                    onChange={handleChange}
-                    value={values.doctor}
-                  >
-                    <option selected disabled value="">
-                      Doctor
-                    </option>
-                  </select>
-                  {errors.doctor && touched.doctor && (
-                    <div
-                      style={{
-                        color: "red",
-                        fontSize: "12px",
-                        margin: "5px 0 5px 3px",
-                      }}
-                    >
-                      {errors.doctor}
-                    </div>
-                  )}
-                </div>
-                <div className="select">
-                  <select
-                    id="job"
-                    name="job"
-                    onChange={handleChange}
-                    value={values.job}
-                  >
-                    <option selected value="">
-                      Departments
-                    </option>
-                  </select>
-                  {errors.job && touched.job && (
-                    <div
-                      style={{
-                        color: "red",
-                        fontSize: "12px",
-                        margin: "5px 0 5px 3px",
-                      }}
-                    >
-                      {errors.job}
-                    </div>
-                  )}
-                </div>
-              </div>
+           
               <div className="btn">
                 <button type="submit" className="btn btn-success mt-2">
                   Register
