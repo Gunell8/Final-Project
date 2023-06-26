@@ -1,18 +1,39 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const useRouter = require("./routes/museum");
 const app = express();
+
+
+app.use(cookieParser());
 app.use(express.json({ limit: "50mb" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+dotenv.config();
+useRouter(app);
+
+
+
+// let whitelist = ["http://localhost:3000" /** other domains if any */];
+// let corsOptions = {
+//   credentials: true,
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
+
+// app.use(cors(corsOptions));
 app.use(cors());
 
-dotenv.config();
 
-useRouter(app);
+
 const PORT = process.env.PORT || 8000;
 const DB = process.env.DB_URL.replace("<password>", process.env.PASSWORD);
 mongoose.set("strictQuery", true);
