@@ -2,11 +2,14 @@
     .wishlist-page {
       padding: 60px 0;
       width: 100%;
-      background-image: url(../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+      background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    }
+    .fa-solid{
+      color: rgb(219, 131, 0);
     }
     .fav-gallery {
       padding: 20px 0;
-      background-image: url(../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+      background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
       .cards {
         display: flex;
         flex-wrap: wrap;
@@ -33,6 +36,7 @@
             line-height: 1.4em;
             font-weight: 600;
             max-width: 600px;
+           
           }
           .image {
             overflow: hidden;

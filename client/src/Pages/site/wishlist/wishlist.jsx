@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { removeAll, removeToWishlist } from "../../redux/slice/wishlistSlice";
+import { removeAll, removeToWishlist } from "../../../redux/slice/wishlistSlice";
 const WishListPage = () => {
   const wishlist = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const WishListPage = () => {
                 );
               })
             ) : (
-              <h1>Empty</h1>
+              <h1>There is nothing yet <i className="fa-solid fa-face-smile"></i></h1>
             )}
           </div>
           {wishlist.data.find((elem) => elem._id) && (

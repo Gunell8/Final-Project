@@ -29,8 +29,6 @@ const LoginPage = () => {
             navigate("/");
           })
           .catch(() => setUserError(true));
-
-     
       },
     });
   return (

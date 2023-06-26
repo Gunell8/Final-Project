@@ -44,7 +44,7 @@ export const Card = () => {
           </div>
           <div className="cards">
             {gallery.data.map((data) => (
-              <div className="card">
+              <div key={data._id} className="card">
                 <div className="heart">
                 {wishlist.data.find((elem) => elem._id === data._id) ? (
                     <div

@@ -17,7 +17,7 @@ export const Event = () => {
                   <h6>Artgram Art Workshop</h6>
                   <div className="date">Sep 21, 2022 to Sep 24, 2022</div>
                   <div className="location">
-                    <i class="fa-sharp fa-solid fa-location-dot"></i>Art
+                    <i className="fa-sharp fa-solid fa-location-dot"></i>Art
                     Institute of Paris, France
                   </div>
                 </div>
@@ -26,7 +26,7 @@ export const Event = () => {
                   <h6>Arts and Humanities</h6>
                   <div className="date">Sep 14, 2022 to Sep 16, 2022</div>
                   <div className="location">
-                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                    <i className="fa-sharp fa-solid fa-location-dot"></i>
                     Super Modern, London, UK
                   </div>
                 </div>
@@ -35,7 +35,7 @@ export const Event = () => {
                   <h6>Sculpture Painting Workshop</h6>
                   <div className="date">Aug 15, 2022 to Aug 17, 2022</div>
                   <div className="location">
-                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                    <i className="fa-sharp fa-solid fa-location-dot"></i>
                     The Fifth Avenue Road, Mumbai
                   </div>
                 </div>

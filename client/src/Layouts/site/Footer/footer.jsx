@@ -8,7 +8,9 @@ export const Footer = () => {
                <div className='container'>
            <footer>
                 <div className="foot-left">
+                    <Link to={'/'}>
                     <img src={logo} alt="" />
+                    </Link>
                     <div className="inp"> 
                     <label htmlFor="">Subscribe to the newsletter and stay in the know.</label>
                     <input type="text" placeholder='Email address' />

@@ -2,4 +2,45 @@
     background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
     width: 100%;
     height: 100vh;
+    .body-dashboard{
+        margin-left: 290px;
+        padding: 120px 0;
+        .first-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .image{
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                .img1{
+                    width: 230px;
+                    height: 230px;
+                    border-radius: 100% 100% 0% 0px;
+                    margin-top: 50px;
+                    
+                }
+                .img2{
+                    width: 235px;
+                    height: 320px;
+                    border-radius: 150px;
+                    margin-top: 50px;
+        
+                }
+                .img3{
+                    width: 235px;
+                    height: 320px;
+                    border-radius: 150px;
+                }
+                .img4{
+                    width: 210px;
+                    height: 210px;
+                    border-radius: 100%;
+                    margin-top: 70px;
+        
+                }
+            }
+        }
+    }
+    
 }

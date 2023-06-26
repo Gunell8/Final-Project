@@ -11,7 +11,7 @@ export const getData = createAsyncThunk("getData", async (value) => {
   if (value === 1) {
     return response.data.sort((a, b) => a.price - b.price);
   } else if (value === 2) {
-    return response.data.sort((a, b) => (b.name > a.name ? 1 : -1));
+    return response.data.sort((a, b) => (a.name > b.name ? 1 : -1));
   } else if (value) {
     return response.data.filter((elem) =>
       `${elem.name}`
