@@ -1,124 +1,65 @@
-import React, { useEffect, useState } from "react";
-import { Navbar } from "../../../components/admin/Navbar";
-import "./style.scss";
-import { useFormik } from "formik";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  deleteusersData,
-  getusersData,
-  updateusersData,
-} from "../../../redux/slice/usersDataSlice";
-import { usersSchema } from "../AddUsers/schema";
-export const AdminUsers = () => {
-  const [editData, setEditData] = useState(false);
-  const [postImage, setPostImage] = useState("");
-  const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
-  
-  useEffect(() => {
-    dispatch(getusersData());
-  }, []);
-  const { handleSubmit, handleChange, values, errors, touched } =
+import { useFormik } from 'formik';
+import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet";
+import "./style.scss"
+import { postData } from '../../../redux/slice/galeryDataSlice';
+import { Navbar } from '../../../components/admin/Navbar';
+import { usersSchema } from './schema';
+import { useState } from 'react';
+import axios from 'axios';
+export const AddUsers = () => {
+    const dispatch = useDispatch();
+    const [postImage, setPostImage] = useState("");
+
+  const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
         firstName: "",
         lastName: "",
+        email: "",
         password: "",
         birthday: "",
-        email: "",
-        image: "",
-        phone: "",
         address: "",
-
+        phone: "",
+        image: "",
       },
-      validationSchema: usersSchema,
-      onSubmit: (values) => {
-        dispatch(updateusersData(values)).then(() =>
-          dispatch(getusersData())
-        );
+     validationSchema: usersSchema,
+     onSubmit: async (values) => {
+     values.image = postImage 
+        const checkUser = await axios
+          .post("http://localhost:8080/register", values );
       },
     });
-  // for image
-  const convertToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = () => {
-        resolve(fileReader.result);
+    
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+          const fileReader = new FileReader();
+          fileReader.readAsDataURL(file);
+          fileReader.onload = () => {
+            resolve(fileReader.result);
+          };
+          fileReader.onerror = (error) => {
+            reject(error);
+          };
+        });
       };
-      fileReader.onerror = (error) => {
-        reject(error);
+    
+      const handleFileUpload = async (e) => {
+        const file = e.target.files[0];
+        const base64 = await convertToBase64(file);
+        setPostImage(base64);
       };
-    });
-  };
-
-  const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    setPostImage(base64);
-  };
-
-  const handleEdit = async (id) => {
-    setEditData(true);
-    users.data?.map((element) => {
-      if (element._id === id) {
-        values.id = element._id;
-        values.firstName = element.firstName;
-        values.lastName = element.lastName;
-        values.password = element.password;
-        values.birthday = element.birthday;
-        values.address = element.address;
-        values.email = element.email;
-        values.phone = element.phone;
-        values.image = element.image;
-      }
-    });
-  };
- 
   return (
-    <div className="admingallery">
-      <Navbar />
-      <div className="museum-cards">
-        <h2>PRODUCTS</h2>
-        <div className="cards">
-          {users.data.map((d) => {
-            return (
-              <div key={d._id} className="card">
-                <img src={d.image} alt="" />
-                <h1>{d.firstName}</h1>
-                <h3>{d.email}</h3>
-                <div className="btn">
-                  <button
-                    className="deleteBtn"
-                    onClick={() =>
-                      dispatch(deleteusersData(d._id)).then(() =>
-                        dispatch(getusersData())
-                      )
-                    }
-                  >
-                    Delete
-                  </button>
-                  <button onClick={() => handleEdit(d._id)} className="editBtn">
-                    Edit
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {editData && (
-        <div id="update-gallery">
-          <form onSubmit={handleSubmit}>
-            <div className="close-bg">
-
-            <button onClick={() => setEditData(false)} className="close">
-              x
-            </button>
-            </div>
-           
-            <div className="form">
+    <div id="add-gallery">
+    <Helmet>
+      <title>Users - Add Users</title>
+      <meta name="description" content="test on react-helmet" />
+      <meta name="theme-color" content="#ccc" />
+    </Helmet>
+    <Navbar />
+    <div id="update-gallery">
+          <form onSubmit={handleSubmit}>            
+          <div className="form">
               <div className="left">
                 <div className="input-control">
                   <p>
@@ -335,12 +276,11 @@ export const AdminUsers = () => {
             </div>
             <div className="btn">
               <button type="submit" className="btn btn-success mt-2">
-                Update
+                Add
               </button>
             </div>
           </form>
         </div>
-      )}
-    </div>
-  );
-};
+  </div>
+  )
+}

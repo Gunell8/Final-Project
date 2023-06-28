@@ -2,7 +2,6 @@ import * as Yup from "yup";
 
 export const GallerySchema = Yup.object({
   name: Yup.string().required(),
-  image: Yup.string().required(),
   title1: Yup.string().required(),
   title2: Yup.string().required(),
   title3: Yup.string().required(),
@@ -17,6 +16,4 @@ export const GallerySchema = Yup.object({
   authenticity: Yup.string().required(),
   signature: Yup.string().required(),
   collectors: Yup.string().required(),
-
-
 });

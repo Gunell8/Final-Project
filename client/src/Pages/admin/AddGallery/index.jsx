@@ -3,11 +3,12 @@ import { useDispatch } from "react-redux";
 import { Helmet } from "react-helmet";
 import "./style.scss"
 import React, { useState } from "react";
-import { postData } from '../../../redux/slice/galeryDataSlice';
 import { Navbar } from '../../../components/admin/Navbar';
 import { GallerySchema } from './schema';
+import { postData } from '../../../redux/slice/galeryDataSlice';
 export const AddGallery = () => {
     const dispatch = useDispatch();
+    const [postImage, setPostImage] = useState("");
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -29,11 +30,29 @@ export const AddGallery = () => {
       },
      validationSchema: GallerySchema,
       onSubmit: (values) => {
+        values.image = postImage 
         dispatch(postData(values));
         resetForm();
       },
     });
-
+    const convertToBase64 = (file) => {
+      return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () => {
+          resolve(fileReader.result);
+        };
+        fileReader.onerror = (error) => {
+          reject(error);
+        };
+      });
+    };
+  
+    const handleFileUpload = async (e) => {
+      const file = e.target.files[0];
+      const base64 = await convertToBase64(file);
+      setPostImage(base64);
+    };
   return (
     <div id="add-gallery">
     <Helmet>
@@ -415,32 +434,33 @@ export const AddGallery = () => {
                   )}
                 </div>
 
-                <div className="input-control">
-                  <p>
-                    <label htmlFor="image" className="m-2">
-                      Image
-                    </label>
-                  </p>
-                  <input
-                    id="image"
-                    name="image"
-                    type="text"
-                    onChange={handleChange}
-                    value={values.image}
-                    placeholder="Image"
-                  />
-                  {errors.image && touched.image && (
-                    <div
-                      style={{
-                        color: "red",
-                        fontSize: "12px",
-                        margin: "5px 0 5px 3px",
-                      }}
-                    >
-                      {errors.image}
-                    </div>
-                  )}
-                </div>
+                <div className="input-image">
+                <p>
+                  <label htmlFor="image" className="m-2">
+                    Image
+                  </label>
+                </p>
+                <input
+                  id="image"
+                  name="image"
+                  type="file"
+                  placeholder="Image"
+                  onChange={(e) => {
+                    handleFileUpload(e);
+                  }}
+                />
+                {errors.image && touched.image && (
+                  <div
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      margin: "5px 0 5px 3px",
+                    }}
+                  >
+                    {errors.image}
+                  </div>
+                )}
+              </div>
               </div>
             </div>
             <div className="btn">

@@ -1,4 +1,5 @@
 const Users = require('../models/loginRegister')
+
 module.exports.getUsersData = async (req, res) => {
     try {
       const users = await Users.find();

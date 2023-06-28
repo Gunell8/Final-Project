@@ -1,6 +1,6 @@
 import React, {  useState } from "react";
 import { useFormik } from "formik";
-import { usersSchema } from "./schema";
+import {loginSchema} from "./schema"
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Alert } from "antd";
@@ -17,7 +17,7 @@ const LoginPage = () => {
         email: "",
         password: "",
       },
-      validationSchema: usersSchema,
+      validationSchema: loginSchema,
       onSubmit: async (values) => {
         const checkUser = await axios
           .create({

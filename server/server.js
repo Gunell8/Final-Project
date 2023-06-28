@@ -13,7 +13,6 @@ app.use(express.json({ limit: "50mb" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 dotenv.config();
-useRouter(app);
 
 
 
@@ -32,6 +31,7 @@ useRouter(app);
 // app.use(cors(corsOptions));
 app.use(cors());
 
+useRouter(app);
 
 
 const PORT = process.env.PORT || 8000;

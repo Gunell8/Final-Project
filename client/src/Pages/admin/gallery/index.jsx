@@ -11,6 +11,7 @@ import {
 import { GallerySchema } from "../AddGallery/schema";
 export const AdminGallery = () => {
   const dispatch = useDispatch();
+  const [postImage, setPostImage] = useState("");
   const gallery = useSelector((state) => state.gallery);
   const [editData, setEditData] = useState(false);
   useEffect(() => {
@@ -38,9 +39,29 @@ export const AdminGallery = () => {
       },
       validationSchema: GallerySchema,
       onSubmit: (values) => {
+        values.image = postImage 
         dispatch(updateData(values)).then(() => dispatch(getData()));
       },
     });
+
+    const convertToBase64 = (file) => {
+      return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () => {
+          resolve(fileReader.result);
+        };
+        fileReader.onerror = (error) => {
+          reject(error);
+        };
+      });
+    };
+  
+    const handleFileUpload = async (e) => {
+      const file = e.target.files[0];
+      const base64 = await convertToBase64(file);
+      setPostImage(base64);
+    };
 
   const handleEdit = async (id) => {
     setEditData(true);
@@ -480,7 +501,7 @@ export const AdminGallery = () => {
                 </div>
 
            
-                <div className="input-control">
+                <div className="input-image">
                   <p>
                     <label htmlFor="image" className="m-2">
                       Image
@@ -489,10 +510,11 @@ export const AdminGallery = () => {
                   <input
                     id="image"
                     name="image"
-                    type="text"
-                    onChange={handleChange}
-                    value={values.image}
+                    type="file"
                     placeholder="Image"
+                    onChange={(e) => {
+                      handleFileUpload(e);
+                    }}
                   />
                   {errors.image && touched.image && (
                     <div
