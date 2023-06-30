@@ -11,6 +11,7 @@ export const Header = () => {
   const [user, setUser] = useState(false);
   const [menu, setMenu] = useState(false);
   const users = useSelector((state) => state.users);
+  const counter = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   
   const handleLogout = async () => {
@@ -32,6 +33,9 @@ export const Header = () => {
       <div className="container">
         <div className="nav">
           <nav>
+            {
+              console.log(counter.value)
+            }
             <div className="logo">
               <Link to={"/"}>
                 <img src={logo} alt="" />
@@ -146,7 +150,7 @@ export const Header = () => {
               </div>
             </div>
             <div className="card-count" onClick={() => navigate('/cart')}>
-              Cart <div className="count">0</div>
+              Cart <div className="count">{counter.value}</div>
             </div>
           </nav>
         </div>

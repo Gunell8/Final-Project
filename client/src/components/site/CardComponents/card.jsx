@@ -10,6 +10,7 @@ import {
   removeToWishlist,
 } from "../../../redux/slice/wishlistSlice";
 import { addToCart } from "../../../redux/slice/cartSlice";
+import { increment } from "../../../redux/slice/countSlice";
 export const Card = () => {
   const [sortBtn, setSortBtn] = useState(false);
   const gallery = useSelector((state) => state.gallery);
@@ -18,6 +19,7 @@ export const Card = () => {
   const wishlist = useSelector((state) => state.wishlist);
   const handleAddToCart = (data) => {
     dispatch(addToCart(data));
+    dispatch(increment())
     // navigate("/cart");
   };
   useEffect(() => {

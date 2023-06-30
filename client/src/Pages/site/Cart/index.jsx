@@ -11,11 +11,12 @@ import {
 import "./style.scss";
 import { Link } from "react-router-dom";
 import PayButton from "./PayButton/index";
+import { decrement, increment, removeValue } from "../../../redux/slice/countSlice";
 // import useToken from "../../../Hooks/useToken";
 // import PayButton from "./PayButton";
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const auth = useSelector((state) => state.auth);
+  const users = useSelector((state) => state.users);
 //   const [token] = useToken();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,15 +27,18 @@ const Cart = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    // dispatch(increment())
   };
   const handleDecreaseCart = (product) => {
     dispatch(decreaseCart(product));
+    // dispatch(decrement())
   };
   const handleRemoveFromCart = (product) => {
     dispatch(removeFromCart(product));
   };
   const handleClearCart = () => {
     dispatch(clearCart());
+    // dispatch(removeValue())
   };
   return (
     <div className="full-cart">
@@ -123,17 +127,18 @@ const Cart = () => {
                 <p style={{ fontFamily: "chillax-regular", fontSize: "12px" }}>
                   Taxes and shipping calculated at checkout
                 </p>
-                <PayButton cartItems={cart.cartItems} />
-                {/* {token?.token ? (
-                // ) : ( */}
-                  {/* <button
+               
+                {users?.user ? (
+                   <PayButton cartItems={cart.cartItems} />
+                 ) : (
+                  <button
                   style={{fontFamily:'chillax'}}
                     className="cart-login"
-                    onClick={() => navigate("/sign-in")}
+                    onClick={() => navigate("/login")}
                   >
-                    Login to Check out */}
-                  {/* </button> */}
-                {/* )} */}
+                    Login to Check out
+                  </button>
+                )}
                 <div className="continue-shopping">
                   <Link
                     to="/shop"

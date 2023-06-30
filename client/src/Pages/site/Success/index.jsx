@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import "./style.scss"
 // import styled from "styled-components";
 import { clearCart, getTotals } from "../../../redux/slice/cartSlice";
 
@@ -17,13 +18,15 @@ const CheckoutSuccess = () => {
 
   return (
     <>
-      <h2>Checkout Successful</h2>
+     <div className="success">
+     <h2>Checkout Successful</h2>
       <p>Your order might take some time to process.</p>
       <p>Check your order status at your profile after about 10mins.</p>
       <p>
         Incase of any inqueries contact the support at{" "}
         <strong>support@onlineshop.com</strong>
       </p>
+     </div>
     </>
   );
 };

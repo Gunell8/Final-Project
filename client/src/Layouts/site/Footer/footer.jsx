@@ -32,11 +32,11 @@ export const Footer = () => {
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                         <ul>
-                            <li><Link>FAQs</Link></li>
-                            <li><Link>Privacy Policy</Link></li>
-                            <li><Link>Style Guide</Link></li>
-                            <li><Link>Instructions</Link></li>
-                            <li><Link>Licenses</Link></li>
+                            <li><Link to="/projects">Projects</Link></li>
+                            <li><Link to="/shop">Products</Link></li>
+                            <li><Link to="/blog">Blog</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="*">Error</Link></li>
                         </ul>
 
                     </div>
