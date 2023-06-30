@@ -1,6 +1,6 @@
 #event {
-    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
-    padding-bottom: 100px;
+  background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+  padding-bottom: 100px;
   .event {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -12,28 +12,32 @@
       line-height: 1.4em;
       font-weight: 600;
     }
-    .galery-photo{
+    .galery-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      .img1 {
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
         gap: 50px;
-        .img1{
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        
-    .frst{
-        .imgg1{
-            width: 400px;
-            height: 347px;
+        flex-wrap: wrap;
+
+        .frst {
+          width: 30%;
+          @media only screen and (max-width: 767px) {
+            width: 100%;
+          }
+          .imgg1 {
+            width: 100%;
             cursor: pointer;
             transition: all 0.4s;
-            &:hover{
-                transform: scale(1.02);
+            &:hover {
+              transform: scale(1.02);
             }
-        }
-        h6{
+          }
+          h6 {
             margin-top: 0px;
             margin-bottom: 10px;
             font-family: "Montserrat", sans-serif;
@@ -42,9 +46,8 @@
             font-size: 24px;
             line-height: 1.4em;
             font-weight: 400;
-           
-        }
-        .date{
+          }
+          .date {
             font-family: Inter, sans-serif;
             color: #333;
             font-size: 16px;
@@ -53,19 +56,23 @@
             margin-bottom: 10px;
             grid-column-gap: 10px;
             grid-row-gap: 10px;
-        }
-        .location{
+          }
+          .location {
             display: flex;
             gap: 10px;
             align-items: center;
-            font-family: Arial,sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+          }
         }
-    }
-    .second{
-        h6{
+        .second {
+          width: 30%;
+          @media only screen and (max-width: 767px) {
+            width: 100%;
+          }
+          h6 {
             margin-top: 0px;
             margin-bottom: 10px;
             font-family: "Montserrat", sans-serif;
@@ -74,8 +81,8 @@
             font-size: 24px;
             line-height: 1.4em;
             font-weight: 400;
-        }
-        .date{
+          }
+          .date {
             font-family: Inter, sans-serif;
             color: #333;
             font-size: 16px;
@@ -84,70 +91,70 @@
             margin-bottom: 10px;
             grid-column-gap: 10px;
             grid-row-gap: 10px;
-        }
-        .location{
+          }
+          .location {
             display: flex;
             gap: 10px;
             align-items: center;
-            font-family: Arial,sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333;
-        }
-        .imgg2{
-           width: 400px;
-           height: 347px;
-           cursor: pointer;
-           transition: all 0.4s;
-           &:hover{
-               transform: scale(1.02);
-           }
-        }
-    }
-        .third{
-            .imgg3{
-                width: 400px;
-                height: 347px;
-                cursor: pointer;
-                transition: all 0.4s;
-                &:hover{
-                    transform: scale(1.02);
-                }
-             }
-             h6{
-                margin-top: 0px;
-                margin-bottom: 10px;
-                font-family: "Montserrat", sans-serif;
-                font-family: "Righteous", cursive;
-                color: #000;
-                font-size: 24px;
-                line-height: 1.4em;
-                font-weight: 400;
-                max-width: 300px;
-               
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+          }
+          .imgg2 {
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+              transform: scale(1.02);
             }
-            .date{
-                font-family: Inter, sans-serif;
-                color: #333;
-                font-size: 16px;
-                line-height: 1.4em;
-                font-weight: 500;
-                margin-bottom: 10px;
-                grid-column-gap: 10px;
-                grid-row-gap: 10px;
-            }
-            .location{
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                font-family: Arial,sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        color: #333;
-            }
+          }
         }
+        .third {
+          width: 30%;
+          @media only screen and (max-width: 767px) {
+            width: 100%;
+          }
+          .imgg3 {
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+              transform: scale(1.02);
+            }
+          }
+          h6 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-family: "Righteous", cursive;
+            color: #000;
+            font-size: 24px;
+            line-height: 1.4em;
+            font-weight: 400;
+            max-width: 300px;
+          }
+          .date {
+            font-family: Inter, sans-serif;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.4em;
+            font-weight: 500;
+            margin-bottom: 10px;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+          }
+          .location {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+          }
+        }
+      }
     }
-    }
-  
-    }
+  }
 }

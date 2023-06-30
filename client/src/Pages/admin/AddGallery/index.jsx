@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import "./style.scss"
 import React, { useState } from "react";
 import { Navbar } from '../../../components/admin/Navbar';
-import { GallerySchema } from './schema';
+import { gallerySchema } from './schema';
 import { postData } from '../../../redux/slice/galeryDataSlice';
 export const AddGallery = () => {
     const dispatch = useDispatch();
@@ -27,14 +27,19 @@ export const AddGallery = () => {
         image: "",
         dimensionscm: "",
         medium: "",
+        collectors: "",
+        signature: "",
       },
-     validationSchema: GallerySchema,
-      onSubmit: (values) => {
+     validationSchema: gallerySchema,
+      onSubmit: async (values) => {
         values.image = postImage 
         dispatch(postData(values));
         resetForm();
       },
     });
+
+
+
     const convertToBase64 = (file) => {
       return new Promise((resolve, reject) => {
         const fileReader = new FileReader();
@@ -195,6 +200,32 @@ export const AddGallery = () => {
                     </div>
                   )}
                 </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="signature" className="m-2">
+                    Signature
+                    </label>
+                  </p>
+                  <input
+                    id="signature"
+                    name="signature"
+                    type="text"
+                    onChange={handleChange}
+                    value={values.signature}
+                    placeholder="Signature"
+                  />
+                  {errors.signature && touched.signature && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.signature}
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="middle">
                 <div className="input-control">
@@ -324,6 +355,32 @@ export const AddGallery = () => {
                       }}
                     >
                       {errors.dimensionscm}
+                    </div>
+                  )}
+                </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="collectors" className="m-2">
+                    Collectors
+                    </label>
+                  </p>
+                  <input
+                    id="collectors"
+                    name="collectors"
+                    type="text"
+                    onChange={handleChange}
+                    value={values.collectors}
+                    placeholder="Collectors"
+                  />
+                  {errors.collectors && touched.collectors && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.collectors}
                     </div>
                   )}
                 </div>
@@ -461,6 +518,32 @@ export const AddGallery = () => {
                   </div>
                 )}
               </div>
+              <div className="input-control">
+                  <p>
+                    <label htmlFor="price" className="m-2">
+                      Price
+                    </label>
+                  </p>
+                  <input
+                    id="price"
+                    name="price"
+                    type="number"
+                    onChange={handleChange}
+                    value={values.price}
+                    placeholder="Price"
+                  />
+                  {errors.price && touched.price && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.price}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className="btn">

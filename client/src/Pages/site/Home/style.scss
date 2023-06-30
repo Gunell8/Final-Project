@@ -1,196 +1,265 @@
-#home{
-    padding-bottom: 100px;
+#home {
+  padding-bottom: 100px;
+  background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
+  .home {
+    .first-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 120px;
+      .image {
+        @media only screen and (max-width:478px) {
+            display: flex;
+            flex-direction: column;
+        }
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        width: 100%;
+        .image1 {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            @media only screen and (max-width:767px) {
+              gap: 40px;
+             }
+          .img1 {
+            width: 50%;
+            height: 30%;
+            border-radius: 100% 100% 0% 0px;
+            margin-top: 50px;
+            @media only screen and (max-width:767px) {
+              width: 35%;
+             }
+          }
+          .img2 {
+            width: 50%;
+            height: 30%;
+            border-radius: 150px;
+            margin-top: 50px;
+            @media only screen and (max-width:767px) {
+              width: 35%;
+             }
+          }
+        }
+        .image2 {
+          width: 100%;
+          display: flex;
+          gap: 20px;
+          @media only screen and (max-width:767px) {
+            gap: 40px;
+           }
+          .img3 {
+            width: 50%;
+            height: 30%;
+            border-radius: 150px;
+            @media only screen and (max-width:767px) {
+              width: 35%;
+             }
+          }
+          .img4 {
+            width: 50%;
+            height: 30%;
+            border-radius: 100%;
+            margin-top: 70px;
+            @media only screen and (max-width:767px) {
+              width: 35%;
+             }
+          }
+        }
+      }
+    }
+    h1 {
+      margin-bottom: 0;
+      font-family: "Montserrat", sans-serif;
+      font-family: "Righteous", cursive;
+      color: #000;
+      font-size: 40px;
+      line-height: 1.4em;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: 100px;
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+      max-width: 420px;
+        margin-left: 0px;
+
+    }
+    }
+  }
+  #artgram {
+    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    .artt {
+      display: flex;
+      @media only screen and (max-width:767px) {
+          flex-direction: column;
+          align-items: center;
+      }
+      .artgram {
+        h2 {
+          margin-bottom: 0;
+          font-family: "Montserrat", sans-serif;
+          font-family: "Righteous", cursive;
+          color: #000;
+          font-size: 50px;
+          line-height: 1.4em;
+          font-weight: 400px;
+          max-width: 300px;
+          margin-left: 100px;
+          @media only screen and (max-width:767px) {
+            margin-left: 0;
+            max-width: 400px;
+            font-size: 40px;
+         }
+        }
+        p {
+          font-family: "Righteous", cursive;
+          color: #504f4f;
+          font-size: 18px;
+          line-height: 1.4em;
+          font-weight: 200px;
+          max-width: 500px;
+          margin-left: 100px;
+          @media only screen and (max-width:767px) {
+            margin-left: 0;
+            max-width: 400px;
+         }
+        }
+        a {
+          margin-top: 200px;
+          color: #000;
+          font-size: 15px;
+          margin-left: 100px;
+          @media only screen and (max-width:767px) {
+            margin-left: 0;
+         }
+        }
+        .imgs {
+          margin: 20px 0px 10px 180px;
+          @media only screen and (max-width:767px) {
+           margin:20px 0 20px 0;
+           display: flex;
+           justify-content: center;
+           width: 100%;
+        }
+
+          .car {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .imgs2 {
+      // margin: 20px 200px 10px 180px;
+      @media only screen and (max-width:767px) {
+       width: 95%;
+    }
+      width: 50%;
+      .statue {
+        width: 100%;
+        // height: 100%;
+        border-radius: 400px;
+        box-shadow: 5px 5px 20px 5px rgb(49, 49, 49);
+        @media only screen and (max-width:767px) {
+          width: 90%;
+       }
+      }
+    }
+  }
+  #slider {
+    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+    padding-top: 100px;
+    .slider {
+      .head {
+        display: flex;
+        justify-content: center;
+        h2 {
+          font-family: "Montserrat", sans-serif;
+          font-family: "Righteous", cursive;
+          color: #000;
+          font-size: 55px;
+          line-height: 1.4em;
+          font-weight: 400px;
+          text-align: center;
+          max-width: 1090px;
+          @media only screen and (max-width:767px) {
+            font-size: 35px;
+         }
+        }
+      }
+    }
+  }
+  .mySwiper {
     background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
-    .home{
-        .first-section{
+    display: flex;
+    align-items: center;
+    img {
+      width: 180px;
+      height: 100px;
+    }
+  }
+  #latest {
+    margin: 0;
+    background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
+    .latest {
+      padding-top: 100px;
+      h3 {
+        margin-top: 150px;
+        font-family: "Montserrat", sans-serif;
+        font-family: "Righteous", cursive;
+        color: #000;
+        font-size: 55px;
+        margin: 0;
+        line-height: 1.4em;
+        font-weight: 400px;
+        text-align: center;
+      }
+      .latest-card {
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 120px;
-        .image{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            .img1{
-                width: 230px;
-                height: 230px;
-                border-radius: 100% 100% 0% 0px;
-                margin-top: 50px;
-                
-            }
-            .img2{
-                width: 235px;
-                height: 320px;
-                border-radius: 150px;
-                margin-top: 50px;
-    
-            }
-            .img3{
-                width: 235px;
-                height: 320px;
-                border-radius: 150px;
-            }
-            .img4{
-                width: 210px;
-                height: 210px;
-                border-radius: 100%;
-                margin-top: 70px;
-    
-            }
+        gap: 50px;
+        flex-wrap: wrap;
+        h5 {
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          line-height: 20px;
+          color: #333;
+          cursor: pointer;
         }
-    }
-    h1{
-        margin-bottom: 0;
-        font-family: 'Montserrat', sans-serif;
-        font-family: 'Righteous', cursive;
-            color: #000;
-        font-size: 40px;
-        line-height: 1.4em;
-        font-weight: 400;
-        max-width: 600px;
-        margin-left: 100px;
-    }
-}
-#artgram{
-    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
-    .artt{
-        display: flex;
-        .artgram{
-            h2{
-        
-                margin-bottom: 0;
-                font-family: 'Montserrat', sans-serif;
-                font-family: 'Righteous', cursive;
-                    color: #000;
-                font-size: 50px;
-                line-height: 1.4em;
-                font-weight: 400px;
-                max-width: 300px;
-                margin-left: 100px;
-            }
-            p{
-                font-family: 'Righteous', cursive;
-                    color: #504f4f;
-                font-size: 18px;
-                line-height: 1.4em;
-                font-weight: 200px;
-                max-width: 500px;
-                margin-left: 100px;
-        
-            }
-            a{
-                margin-top: 200px;
-                    color: #000;
-                font-size: 15px;
-                margin-left: 100px;
-        
-            }
-            .imgs{
-               margin: 20px 0px 10px 180px;
-                .car{
-                    width: 300px;
-                    height: 300px;
-                    border-radius: 50%;
-                }
-            }
+        h4 {
+          margin-top: 0px;
+          margin-bottom: 10px;
+          font-family: "Montserrat", sans-serif;
+          font-family: "Righteous", cursive;
+          font-size: 24px;
+          line-height: 1.4em;
+          font-weight: 400;
+          cursor: pointer;
         }
-    }
-    .imgs2{
-        margin: 20px 200px 10px 180px;  
-        .statue{
-            width: 600px;
-            height: 900px;
-            border-radius: 400px;
-            box-shadow: 5px 5px 20px 5px rgb(49, 49, 49);
-            
+        p {
+          font-family: Inter, sans-serif;
+          color: #333;
+          font-size: 16px;
+          line-height: 1.4em;
+          font-weight: 500;
+          cursor: pointer;
         }
-    }
-}
-#slider{
-    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
-    padding-top: 100px;
-    .slider{
-        .head{
-            display: flex;
-            justify-content: center;
-             h2{
-                font-family: 'Montserrat', sans-serif;
-                font-family: 'Righteous', cursive;
-                    color: #000;
-                font-size: 55px;
-                line-height: 1.4em;
-                font-weight: 400px;
-                text-align: center;
-                max-width: 1090px;
+        .latest-img {
+          width: 30%;
+          @media only screen and (max-width:767px) {
+         width: 80%;
         }
-        }
-       
-    }
-}
-.mySwiper{
-    background-image: url('../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png');
-    display: flex;
-    align-items: center;
-    img{
-        width: 180px;
-        height: 100px;
-    }
-}
-#latest{
-    margin: 0;
-    background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
-    .latest{
-        padding-top: 100px;
-        h3{
-            margin-top: 150px;
-            font-family: 'Montserrat', sans-serif;
-            font-family: 'Righteous', cursive;
-                color: #000;
-            font-size: 55px;
-            margin: 0;
-            line-height: 1.4em;
-            font-weight: 400px;
-            text-align: center;
-        }
-        .latest-card{
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            h5{
-                font-family: Arial,sans-serif;
-                font-size: 14px;
-                line-height: 20px;
-                color: #333;
-                cursor: pointer;
-            }
-            h4{
-                margin-top: 0px;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Righteous', cursive;
-    font-size: 24px;
-    line-height: 1.4em;
-    font-weight: 400;
-    cursor: pointer;
-            }
-            p{
-                font-family: Inter, sans-serif;
-                color: #333;
-                font-size: 16px;
-                line-height: 1.4em;
-                font-weight: 500;
-                cursor: pointer;
-            }
-          .latest-img{
-              width: 800px;
-              img{
-                  width: 100%;
-              }
+          img {
+            width: 100%;
+
           }
         }
-
+      }
     }
-}
+  }
 }

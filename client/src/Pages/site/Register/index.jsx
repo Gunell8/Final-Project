@@ -6,6 +6,7 @@ import "./style.scss";
 import { usersSchema } from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { userData } from "../../../redux/slice/usersDataSlice";
 const SignupPage = () => {
   const [postImage, setPostImage] = useState("");
   const dispatch = useDispatch();
@@ -32,8 +33,12 @@ const SignupPage = () => {
           })
           .post("http://localhost:8080/register", values)
           .then((res) => {
+            dispatch(userData(res.data.user));
+            console.log(res.data.user);
             navigate("/");
           });
+        // dispatch(patientData(checkUser.data.patient));
+        // checkUser.status === 201 && navigate("/");
         resetForm();
       },
     });

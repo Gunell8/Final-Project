@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../assests/images/62f7950839fad2082789a0be_artgram (1).svg";
 import "./style.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Menu, Dropdown } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { userData } from "../../../redux/slice/usersDataSlice";
 export const Header = () => {
   const navigate = useNavigate()
+  const [user, setUser] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const users = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  
+  const handleLogout = async () => {
+    const response = await axios
+      .create({
+        withCredentials: true,
+      })
+      .post("http://localhost:8080/logout")
+      .then((res) => {
+        if (res.status === 200) {
+          dispatch(userData(undefined));
+          navigate("/login");
+          setUser(false);
+        }
+      });
+  };
   return (
     <header>
       <div className="container">
@@ -15,7 +37,7 @@ export const Header = () => {
                 <img src={logo} alt="" />
               </Link>
             </div>
-            <ul>
+            <ul className={menu ? "active-menu" : null}>
               <li>
                 <NavLink to="">Home</NavLink>
               </li>
@@ -60,21 +82,70 @@ export const Header = () => {
               <li>
                 <NavLink to="/wishlist">Wishlist</NavLink>
               </li>
-              <li>
-                <div className="btn">
-                   <button onClick={() => navigate('/login')}>
-                 Login
-                 <i className="fa-solid fa-arrow-right-to-bracket"></i>
-                </button>
-                <button onClick={() => navigate('/register')}>
-                 Sign Up
-                 <i className="fa-solid fa-arrow-right-to-bracket"></i>
-                </button>
-                </div>
-               
-              </li>
+              {users?.user?.isAdmin == true ? (
+                  <li>
+                    <NavLink to={"/admin/"}>
+                      Admin Panel
+                    </NavLink>
+                  </li>
+                ) : null}
             </ul>
-            <div className="card-count">
+            <div className="settings-profil">
+            <div className="user-setting">
+              {users?.user?.firstName == undefined ? (
+                <div onClick={() => setUser(!user)} className="user">
+                  <i className="fa-solid fa-user"></i>
+                </div>
+              ) : (
+                <div onClick={() => setUser(!user)} className="user">
+                  <img src={users?.user?.image} alt="" />
+                </div>
+              )}
+
+              {user && (
+                <div className="user-profile">
+                  {users?.user?.firstName == undefined ? (
+                    <ul>
+                      <li>
+                        <NavLink to={"/login"}>
+                          LOGIN
+                        <i className="fa-solid fa-arrow-right-to-bracket"></i>
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to={"/register"}>
+                          SIGN UP
+                        <i className="fa-solid fa-arrow-right-to-bracket"></i>
+                        </NavLink>
+                      </li>
+                    </ul>
+                  ) : (
+                    <div className="profile">
+                      <h4>
+                        {`${users.user.firstName} ${users.user.lastName}`}
+                      </h4>
+                      <div className="btn">
+                        <button onClick={() => handleLogout()}>
+                          LOGOUT
+                          <i className="fa-solid fa-arrow-right-to-bracket"></i>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+                <div onClick={() => setMenu(!menu)} className="menu-item">
+              <div className="menu">
+                {menu ? (
+                  <i className="fa-solid fa-x"></i>
+                ) : (
+                  <i className="fa-solid fa-bars"></i>
+                )}
+              </div>
+            </div>
+            <div className="card-count" onClick={() => navigate('/cart')}>
               Cart <div className="count">0</div>
             </div>
           </nav>

@@ -82,7 +82,7 @@ export const AdminUsers = () => {
         <h2>PRODUCTS</h2>
         <div className="cards">
           {users.data.map((d) => {
-            return (
+            return d.isAdmin ? null : (
               <div key={d._id} className="card">
                 <img src={d.image} alt="" />
                 <h1>{d.firstName}</h1>

@@ -6,7 +6,10 @@
     .down {
       display: flex;
       gap: 80px;
-
+      @media only screen and (max-width:767px) {
+        flex-direction: column;
+       align-items: center;
+       }
       .left {
         h2 {
           margin-top: 0px;
@@ -38,8 +41,8 @@
         }
       }
       .right {
-        width: 200px;
-        height: 200px;
+        // width: 200px;
+        // height: 200px;
         img {
           width: 550px;
           height: 800px;

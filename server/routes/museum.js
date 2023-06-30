@@ -6,7 +6,7 @@ const {
   createNewMuseumInfo,
   updateMuseumsData,
 } = require("../controllers/museum");
-const { register, login } = require("../controllers/loginRegister");
+const { register, login, logout } = require("../controllers/loginRegister");
 const {
   getUsersData,
   getUsersDataById,
@@ -26,6 +26,7 @@ function useRouter(router) {
   router.put("/users/:id", updateUsersData);
   router.post("/register", register);
   router.post("/login", login);
+  router.post("/logout", logout);
 }
 
 module.exports = useRouter;

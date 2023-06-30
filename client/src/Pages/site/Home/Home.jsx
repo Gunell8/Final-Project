@@ -36,10 +36,14 @@ export const Home = () => {
           <div>
             <section className="first-section">
               <div className="image">
-                <img className="img1" src={img4} alt="" />
-                <img className="img2" src={img1} alt="" />
-                <img className="img3" src={img2} alt="" />
-                <img className="img4" src={img3} alt="" />
+                <div className="image1">
+                  <img className="img1" src={img4} alt="" />
+                  <img className="img2" src={img1} alt="" />
+                </div>
+                <div className="image2">
+                  <img className="img3" src={img2} alt="" />
+                  <img className="img4" src={img3} alt="" />
+                </div>
               </div>
             </section>
             <h1>

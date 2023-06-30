@@ -8,7 +8,7 @@ import {
   getData,
   updateData,
 } from "../../../redux/slice/galeryDataSlice";
-import { GallerySchema } from "../AddGallery/schema";
+import { gallerySchemaEdit } from "./schema";
 export const AdminGallery = () => {
   const dispatch = useDispatch();
   const [postImage, setPostImage] = useState("");
@@ -36,8 +36,10 @@ export const AdminGallery = () => {
         image: "",
         dimensionscm: "",
         medium: "",
+        collectors: "",
+        signature: ""
       },
-      validationSchema: GallerySchema,
+      validationSchema: gallerySchemaEdit,
       onSubmit: (values) => {
         values.image = postImage 
         dispatch(updateData(values)).then(() => dispatch(getData()));
@@ -74,7 +76,6 @@ export const AdminGallery = () => {
         values.title2 = element.title2;
         values.title3 = element.title3;
         values.title4 = element.title4;
-        values.location = element.location;
         values.about = element.about;
         values.seller = element.seller;
         values.medium = element.medium;
@@ -128,7 +129,6 @@ export const AdminGallery = () => {
               x
             </button>
             </div>
-           
             <div className="form">
               <div className="left">
                 <div className="input-control">
@@ -258,6 +258,32 @@ export const AdminGallery = () => {
                       }}
                     >
                       {errors.seller}
+                    </div>
+                  )}
+                </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="signature" className="m-2">
+                    Signature
+                    </label>
+                  </p>
+                  <input
+                    id="signature"
+                    name="signature"
+                    type="text"
+                    onChange={handleChange}
+                    value={values.signature}
+                    placeholder="Signature"
+                  />
+                  {errors.signature && touched.signature && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.signature}
                     </div>
                   )}
                 </div>
@@ -393,6 +419,32 @@ export const AdminGallery = () => {
                     </div>
                   )}
                 </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="collectors" className="m-2">
+                    Collectors
+                    </label>
+                  </p>
+                  <input
+                    id="collectors"
+                    name="collectors"
+                    type="text"
+                    onChange={handleChange}
+                    value={values.collectors}
+                    placeholder="Collectors"
+                  />
+                  {errors.collectors && touched.collectors && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.collectors}
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="right">
                 <div className="input-control">
@@ -500,23 +552,48 @@ export const AdminGallery = () => {
                   )}
                 </div>
 
-           
                 <div className="input-image">
+                <p>
+                  <label htmlFor="image" className="m-2">
+                    Image
+                  </label>
+                </p>
+                <input
+                  id="image"
+                  name="image"
+                  type="file"
+                  placeholder="Image"
+                  onChange={(e) => {
+                    handleFileUpload(e);
+                  }}
+                />
+                {errors.image && touched.image && (
+                  <div
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      margin: "5px 0 5px 3px",
+                    }}
+                  >
+                    {errors.image}
+                  </div>
+                )}
+              </div>
+              <div className="input-control">
                   <p>
-                    <label htmlFor="image" className="m-2">
-                      Image
+                    <label htmlFor="price" className="m-2">
+                      Price
                     </label>
                   </p>
                   <input
-                    id="image"
-                    name="image"
-                    type="file"
-                    placeholder="Image"
-                    onChange={(e) => {
-                      handleFileUpload(e);
-                    }}
+                    id="price"
+                    name="price"
+                    type="number"
+                    onChange={handleChange}
+                    value={values.price}
+                    placeholder="Price"
                   />
-                  {errors.image && touched.image && (
+                  {errors.price && touched.price && (
                     <div
                       style={{
                         color: "red",
@@ -524,7 +601,7 @@ export const AdminGallery = () => {
                         margin: "5px 0 5px 3px",
                       }}
                     >
-                      {errors.image}
+                      {errors.price}
                     </div>
                   )}
                 </div>

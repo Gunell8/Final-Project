@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const gallerySchema = Yup.object({
+export const gallerySchemaEdit = Yup.object({
   name: Yup.string().required("Please enter a input"),
   title1: Yup.string().required("Please enter a input"),
   title2: Yup.string().required("Please enter a input"),

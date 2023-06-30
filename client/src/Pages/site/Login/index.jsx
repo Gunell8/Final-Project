@@ -7,6 +7,7 @@ import { Alert } from "antd";
 import "./style.scss";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { userData } from "../../../redux/slice/usersDataSlice";
 const LoginPage = () => {
   const [userError, setUserError] = useState(false);
   const navigate = useNavigate();
@@ -26,11 +27,12 @@ const LoginPage = () => {
           })
           .post("http://localhost:8080/login", values)
           .then((res) => {
+            dispatch(userData(res.data.user));
+            console.log(res.data.user);
             navigate("/");
           })
           .catch(() => setUserError(true));
-      },
-    });
+        }})
   return (
     <div id="login-page">
       <Helmet>

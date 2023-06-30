@@ -76,3 +76,15 @@ module.exports.login = async (req, res) => {
     res.status(404).json(err);
   }
 };
+
+
+module.exports.logout = async (req, res) => {
+  const cookies = req.cookies;
+  console.log("======1");
+  console.log(cookies);
+  if (!cookies?.jwt) {
+    return res.status(403).send();
+  }
+  res.clearCookie("jwt", { httpOnly: true, someSite: "None", secure: true });
+  return res.status(200).json({ message: "Cookie cleared" }).send();
+};

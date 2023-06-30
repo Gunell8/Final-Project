@@ -5,13 +5,21 @@ import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../redux/slice/galeryDataSlice";
-import { addToWishlist, removeToWishlist } from "../../../redux/slice/wishlistSlice";
+import {
+  addToWishlist,
+  removeToWishlist,
+} from "../../../redux/slice/wishlistSlice";
+import { addToCart } from "../../../redux/slice/cartSlice";
 export const Card = () => {
   const [sortBtn, setSortBtn] = useState(false);
   const gallery = useSelector((state) => state.gallery);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlist);
+  const handleAddToCart = (data) => {
+    dispatch(addToCart(data));
+    // navigate("/cart");
+  };
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -46,7 +54,7 @@ export const Card = () => {
             {gallery.data.map((data) => (
               <div key={data._id} className="card">
                 <div className="heart">
-                {wishlist.data.find((elem) => elem._id === data._id) ? (
+                  {wishlist.data.find((elem) => elem._id === data._id) ? (
                     <div
                       onClick={() => dispatch(removeToWishlist(data._id))}
                       className="icon"
@@ -67,6 +75,9 @@ export const Card = () => {
                   <h1>{data.name}</h1>
                 </Link>
                 <h3>$ {data.price}.00 USD</h3>
+                <button className="addto" onClick={() => handleAddToCart(data)}>
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>

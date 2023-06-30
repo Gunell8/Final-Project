@@ -12,38 +12,95 @@ header {
       .logo {
         img {
           width: 200px;
+          @media only screen and (max-width: 767px) {
+            width: 100px;
+          }
         }
       }
       ul {
+        position: relative;
         display: flex;
         justify-content: space-around;
         align-items: center;
         gap: 30px;
+        @media only screen and (max-width: 1200px) {
+          display: block;
+          position: relative;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 30px;
+          li {
+            list-style: none;
+            position: relative;
+            .btn {
+              display: flex;
+              column-gap: 20px;
+              align-items: center;
+              button {
+                background-color: #000;
+                padding: 10px 20px;
+                border-radius: 5px;
+                transition: all 0.4s;
+                color: #fff;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 13px;
+                font-weight: 600;
+                &:hover {
+                  background-color: #082849;
+                }
+                .fa-solid {
+                  margin-left: 5px;
+                }
+              }
+            }
+  
+            a {
+              color: #000;
+              text-decoration: none;
+              transition: all 0.4s;
+              font-size: 20px;
+              font-weight: 600;
+              &:hover {
+                text-decoration: underline;
+              }
+              &.active {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        @media only screen and (max-width: 990px) {
+          display: none;
+        }
+     
         li {
           list-style: none;
-          .btn{
+          position: relative;
+          .btn {
             display: flex;
             column-gap: 20px;
             align-items: center;
             button {
-            background-color: #000;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: all 0.4s;
+              background-color: #000;
+              padding: 10px 20px;
+              border-radius: 5px;
+              transition: all 0.4s;
               color: #fff;
-            padding: 10px 20px;
-            cursor: pointer;
+              padding: 10px 20px;
+              cursor: pointer;
               font-size: 13px;
               font-weight: 600;
-            &:hover {
-              background-color: #082849;
-            }
-            .fa-solid{
-              margin-left: 5px;
+              &:hover {
+                background-color: #082849;
+              }
+              .fa-solid {
+                margin-left: 5px;
+              }
             }
           }
-          }
-          
+
           a {
             color: #000;
             text-decoration: none;
@@ -56,6 +113,201 @@ header {
             &.active {
               text-decoration: underline;
             }
+          }
+        }
+      }
+      .active-menu {
+        width: 100%;
+        display: block;
+        flex-direction: column;
+        background-color: #fff;
+        background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+        position: absolute;
+        z-index: 7;
+        top: 40px;
+        padding: 25px 50px;
+        padding-left: 220px;
+        li {
+          position: relative;
+          margin-top: 20px;
+          a {
+            color: black;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.5s;
+            .menu-arrow {
+              border: solid #212529;
+              border-radius: 0.5px;
+              border-width: 0 2px 2px 0;
+              padding: 2px;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              -webkit-transition: all 0.5s;
+              transition: all 0.5s;
+              margin-left: 20px;
+              position: absolute;
+              top: 5px;
+            }
+            &.active {
+              color: #017a48;
+              .menu-arrow {
+                border: solid #017a48;
+                border-radius: 0.5px;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 2px;
+                margin-left: 10px;
+                position: absolute;
+                top: 5px;
+              }
+            }
+            &:hover {
+              color: #017a48;
+              .menu-arrow {
+                border: solid #017a48;
+                border-radius: 0.5px;
+                border-width: 0px 2px 2px 0px;
+                padding: 2px;
+                -webkit-transform: rotate(225deg);
+                transform: rotate(225deg);
+                position: absolute;
+                top: 8px;
+              }
+            }
+          }
+        }
+      }
+      .settings-profil {
+        .user-setting {
+          position: relative;
+          .user {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #6d6d6d;
+            box-shadow: 0px 0px 2px 0px #080808;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &:hover {
+              border: 1px solid #06cc79;
+            }
+            .fa-solid {
+              color: #017a48;
+              font-size: 15px;
+            }
+            img {
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+            }
+          }
+          .user-profile {
+            width: 140px;
+            position: absolute;
+            right: 1px;
+            top: 45px;
+            box-shadow: 0px 0px 3px 0px rgb(97, 97, 97);
+            background-color: #fff;
+            background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
+            border-radius: 5px;
+            padding: 10px;
+            ul {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              margin: 0;
+              gap: 10px;
+              padding: 0;
+              li {
+                margin-top: 10px;
+                a {
+                  color: #212529;
+                  font-size: 14px;
+                  font-weight: 700;
+                  letter-spacing: 1px;
+                  transition: all 0.5s;
+                  .fa-solid {
+                    font-size: 13px;
+                    margin-left: 8px;
+                    transition: all 0.5s;
+                  }
+                  &.active {
+                    color: #017a48;
+                    .fa-solid {
+                      color: #017a48;
+                    }
+                  }
+                  &:hover {
+                    color: #017a48;
+                    transition: all 0.5s;
+                    .fa-solid {
+                      color: #017a48;
+                    }
+                  }
+                }
+              }
+            }
+            .profile {
+              padding-left: 10px;
+              h4 {
+                color: #017a48;
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 10px 0;
+              }
+              .btn {
+                margin-top: 10px;
+                button {
+                  padding: 8px 10px;
+                  outline: 0;
+                  cursor: pointer;
+                  font-size: 12px;
+                  letter-spacing: 0.5px;
+                  -webkit-transition: all 0.4s;
+                  transition: all 0.4s;
+                  border-radius: 5px;
+                  background-color: rgba(57, 108, 240, 0.1);
+                  border: 1px solid rgba(57, 108, 240, 0.1);
+                  color: #017a48;
+                  -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+                  box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+                  font-size: 11px;
+                  font-weight: 600;
+                  .fa-solid {
+                    font-size: 13px;
+                    margin-left: 8px;
+                  }
+                  &:hover {
+                    background-color: #017a48;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .menu-item {
+        display: none;
+        @media only screen and (max-width: 990px) {
+          display: block;
+        }
+        .menu {
+          width: 36px;
+          height: 36px;
+          background-color: #017a48;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.4s;
+          .fa-solid {
+            color: #fff;
+            font-size: 12px;
           }
         }
       }

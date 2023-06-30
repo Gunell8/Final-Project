@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <div className="footer">
                <div className='container'>
-           <footer>
+           <footer className='foot'>
                 <div className="foot-left">
                     <Link to={'/'}>
                     <img src={logo} alt="" />
