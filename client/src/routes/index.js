@@ -1,5 +1,6 @@
 import { AddGallery } from "../Pages/admin/AddGallery";
 import { AddUsers } from "../Pages/admin/AddUsers";
+import { Message } from "../Pages/admin/Message";
 import { AdminUsers } from "../Pages/admin/Users";
 import Dashboard from "../Pages/admin/dashboard";
 import { AdminGallery } from "../Pages/admin/gallery";
@@ -114,6 +115,10 @@ export const Router = [
           {
             path: "add-users",
             element: <AddUsers/>,
+          },
+          {
+            path: "contact",
+            element: <Message/>,
           },
         ],
       },

@@ -13,15 +13,25 @@ const {
   updateUsersData,
   deleteUserInfo,
 } = require("../controllers/users");
+const {
+  getContactsData,
+  deleteContactInfo,
+  getContactsDataById,
+  createNewContactInfo,
+} = require("../controllers/contact");
 const router = express.Router();
 function useRouter(router) {
   router.get("/museums", getMuseumData);
+  router.get("/contact", getContactsData);
   router.get("/users", getUsersData);
   router.get("/museums/:id", getMuseumsDataById);
+  router.get("/contact/:id", getContactsDataById);
   router.get("/users/:id", getUsersDataById);
   router.delete("/museums/:id", deleteMuseumInfo);
+  router.delete("/contact/:id", deleteContactInfo);
   router.delete("/users/:id", deleteUserInfo);
   router.post("/museums", createNewMuseumInfo);
+  router.post("/contact", createNewContactInfo);
   router.put("/museums/:id", updateMuseumsData);
   router.put("/users/:id", updateUsersData);
   router.post("/register", register);

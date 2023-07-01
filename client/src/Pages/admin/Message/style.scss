@@ -1,0 +1,74 @@
+.contact {
+  background-image: url("../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png");
+  width: 100%;
+  padding: 80px 0;
+  .contact-messages {
+    margin-left: 290px;
+    padding: 0 20px;
+    h2 {
+      text-align: end;
+      margin-right: 70px;
+      font-family: "Montserrat", sans-serif;
+      font-family: "Righteous", cursive;
+      color: #000;
+      font-size: 30px;
+      line-height: 1.4em;
+      font-weight: 600;
+    }
+    .messages {
+      width: 100%;
+      margin-top: 30px;
+      .message {
+        margin-top: 30px;
+        border: 1px solid #c2c2c2;
+        box-shadow: 0px 0px 6px 0px #757575;
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover{
+        transform: scale(1.02);
+        }
+        .title {
+            span{
+                color: #000;
+                font-weight: 800;
+                font-size: 22px;
+                margin-right: 8px;
+            }
+          h3 {
+            font-size: 20px;
+            color: rgb(204, 2, 2);
+            margin: 0;
+            margin: 8px 0;
+          }
+          h1 {
+            font-size: 22px;
+            color: rgb(102, 9, 9);
+            margin: 0;
+          }
+          p {
+            font-size: 18px;
+            color: rgb(75, 75, 75);
+            font-weight: 500;
+            margin: 8px 0;
+            line-height: 1.5;
+          }
+        }
+        .btn {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+        box-shadow: 0px 0px 6px 0px #f18c8c;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .fa-sharp{
+            color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+}

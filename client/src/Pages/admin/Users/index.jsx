@@ -79,7 +79,7 @@ export const AdminUsers = () => {
     <div className="admingallery">
       <Navbar />
       <div className="museum-cards">
-        <h2>PRODUCTS</h2>
+        <h2>Users</h2>
         <div className="cards">
           {users.data.map((d) => {
             return d.isAdmin ? null : (

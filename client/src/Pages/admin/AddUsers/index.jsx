@@ -28,6 +28,7 @@ export const AddUsers = () => {
      values.image = postImage 
         const checkUser = await axios
           .post("http://localhost:8080/register", values );
+      resetForm()
       },
     });
     

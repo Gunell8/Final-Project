@@ -54,6 +54,14 @@ export const Navbar = () => {
               Add Users
             </Link>
           </li>
+          <li  className="nav-menu">
+          <Link to={"/admin/contact"}>
+              <div className="icon">
+                <i className="fa-solid fa-user-plus"></i>
+              </div>
+              Message
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
