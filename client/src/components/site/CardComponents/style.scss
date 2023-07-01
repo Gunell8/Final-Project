@@ -75,6 +75,10 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 120px;
+      .spin{
+        height: 100vh;
+        padding-top: 100px;
+      }
       .card {
         position: relative;
         width: 280px;

@@ -9,9 +9,11 @@ import {
   updateusersData,
 } from "../../../redux/slice/usersDataSlice";
 import { usersSchema } from "../AddUsers/schema";
+import { Space, Spin } from "antd";
 export const AdminUsers = () => {
   const [editData, setEditData] = useState(false);
   const [postImage, setPostImage] = useState("");
+
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   
@@ -81,7 +83,14 @@ export const AdminUsers = () => {
       <div className="museum-cards">
         <h2>Users</h2>
         <div className="cards">
-          {users.data.map((d) => {
+        {users.loading ? (
+            <div className="spin">
+              <Space size="middle">
+                <Spin size="large" />
+              </Space>
+            </div>
+          ) :
+          users.data.map((d) => {
             return d.isAdmin ? null : (
               <div key={d._id} className="card">
                 <img src={d.image} alt="" />

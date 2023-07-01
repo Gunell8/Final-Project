@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "../../../components/admin/Navbar";
 import "./style.scss";
 import axios from "axios";
+import { Space, Spin, message } from "antd";
 export const Message = () => {
   const [contactData, setContactData] = useState([]);
-
+  const[loading,setLoading]=useState(false)
   const getContactData = async () => {
+    setLoading(true)
     const response = await axios.get("http://localhost:8080/contact");
     setContactData(response.data);
+    setLoading(false)
   };
   useEffect(() => {
     getContactData();
@@ -23,7 +26,14 @@ export const Message = () => {
       <div className="contact-messages">
         <h2>Message</h2>
         <div className="messages">
-          {contactData?.map((d) => {
+        {loading ? (
+            <div className="spin">
+              <Space size="middle">
+                <Spin size="large" />
+              </Space>
+            </div>
+          ) :
+          contactData?.map((d) => {
             return d.isAdmin ? null : (
               <div key={d._id} className="message">
                 <div className="title">

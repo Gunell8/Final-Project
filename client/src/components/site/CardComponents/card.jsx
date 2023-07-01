@@ -5,6 +5,7 @@ import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../redux/slice/galeryDataSlice";
+import { Space, Spin } from "antd";
 import {
   addToWishlist,
   removeToWishlist,
@@ -53,7 +54,14 @@ export const Card = () => {
             </div>
           </div>
           <div className="cards">
-            {gallery.data.map((data) => (
+          {gallery.loading ? (
+            <div className="spin">
+              <Space size="middle">
+                <Spin size="large" />
+              </Space>
+            </div>
+          ) :
+            gallery.data.map((data) => (
               <div key={data._id} className="card">
                 <div className="heart">
                   {wishlist.data.find((elem) => elem._id === data._id) ? (

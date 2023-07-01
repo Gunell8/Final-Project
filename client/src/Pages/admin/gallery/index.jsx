@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../../../components/admin/Navbar";
 import "./style.scss";
+import { Space, Spin } from "antd";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,6 +15,7 @@ export const AdminGallery = () => {
   const [postImage, setPostImage] = useState("");
   const gallery = useSelector((state) => state.gallery);
   const [editData, setEditData] = useState(false);
+
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -37,33 +39,33 @@ export const AdminGallery = () => {
         dimensionscm: "",
         medium: "",
         collectors: "",
-        signature: ""
+        signature: "",
       },
       validationSchema: gallerySchemaEdit,
       onSubmit: (values) => {
-        values.image = postImage 
+        values.image = postImage;
         dispatch(updateData(values)).then(() => dispatch(getData()));
       },
     });
 
-    const convertToBase64 = (file) => {
-      return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
-        fileReader.onload = () => {
-          resolve(fileReader.result);
-        };
-        fileReader.onerror = (error) => {
-          reject(error);
-        };
-      });
-    };
-  
-    const handleFileUpload = async (e) => {
-      const file = e.target.files[0];
-      const base64 = await convertToBase64(file);
-      setPostImage(base64);
-    };
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setPostImage(base64);
+  };
 
   const handleEdit = async (id) => {
     setEditData(true);
@@ -97,26 +99,36 @@ export const AdminGallery = () => {
       <div className="museum-cards">
         <h2>PRODUCTS</h2>
         <div className="cards">
-          {gallery.data.map((d) => (
-            <div className="card">
-              <img src={d.image} alt="" />
-              <h1>{d.name}</h1>
-              <h3>$ {d.price} USD</h3>
-              <div className="btn">
-                <button
-                  className="deleteBtn"
-                  onClick={() =>
-                    dispatch(deleteData(d._id)).then(() => dispatch(getData()))
-                  }
-                >
-                  Delete
-                </button>
-                <button onClick={() => handleEdit(d._id)} className="editBtn">
-                  Edit
-                </button>
-              </div>
+          {gallery.loading ? (
+            <div className="spin">
+              <Space size="middle">
+                <Spin size="large" />
+              </Space>
             </div>
-          ))}
+          ) : (
+            gallery.data.map((d) => (
+              <div className="card">
+                <img src={d.image} alt="" />
+                <h1>{d.name}</h1>
+                <h3>$ {d.price} USD</h3>
+                <div className="btn">
+                  <button
+                    className="deleteBtn"
+                    onClick={() =>
+                      dispatch(deleteData(d._id)).then(() =>
+                        dispatch(getData())
+                      )
+                    }
+                  >
+                    Delete
+                  </button>
+                  <button onClick={() => handleEdit(d._id)} className="editBtn">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
 
@@ -124,10 +136,9 @@ export const AdminGallery = () => {
         <div id="update-gallery">
           <form onSubmit={handleSubmit}>
             <div className="close-bg">
-
-            <button onClick={() => setEditData(false)} className="close">
-              x
-            </button>
+              <button onClick={() => setEditData(false)} className="close">
+                x
+              </button>
             </div>
             <div className="form">
               <div className="left">
@@ -264,7 +275,7 @@ export const AdminGallery = () => {
                 <div className="input-control">
                   <p>
                     <label htmlFor="signature" className="m-2">
-                    Signature
+                      Signature
                     </label>
                   </p>
                   <input
@@ -422,7 +433,7 @@ export const AdminGallery = () => {
                 <div className="input-control">
                   <p>
                     <label htmlFor="collectors" className="m-2">
-                    Collectors
+                      Collectors
                     </label>
                   </p>
                   <input
@@ -553,33 +564,33 @@ export const AdminGallery = () => {
                 </div>
 
                 <div className="input-image">
-                <p>
-                  <label htmlFor="image" className="m-2">
-                    Image
-                  </label>
-                </p>
-                <input
-                  id="image"
-                  name="image"
-                  type="file"
-                  placeholder="Image"
-                  onChange={(e) => {
-                    handleFileUpload(e);
-                  }}
-                />
-                {errors.image && touched.image && (
-                  <div
-                    style={{
-                      color: "red",
-                      fontSize: "12px",
-                      margin: "5px 0 5px 3px",
+                  <p>
+                    <label htmlFor="image" className="m-2">
+                      Image
+                    </label>
+                  </p>
+                  <input
+                    id="image"
+                    name="image"
+                    type="file"
+                    placeholder="Image"
+                    onChange={(e) => {
+                      handleFileUpload(e);
                     }}
-                  >
-                    {errors.image}
-                  </div>
-                )}
-              </div>
-              <div className="input-control">
+                  />
+                  {errors.image && touched.image && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.image}
+                    </div>
+                  )}
+                </div>
+                <div className="input-control">
                   <p>
                     <label htmlFor="price" className="m-2">
                       Price
