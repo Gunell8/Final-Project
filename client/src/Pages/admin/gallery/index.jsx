@@ -43,7 +43,7 @@ export const AdminGallery = () => {
       },
       validationSchema: gallerySchemaEdit,
       onSubmit: (values) => {
-        values.image = postImage;
+        // values.image = postImage;
         dispatch(updateData(values)).then(() => dispatch(getData()));
       },
     });

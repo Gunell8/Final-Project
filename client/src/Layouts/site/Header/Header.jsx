@@ -22,7 +22,7 @@ export const Header = () => {
       .post("http://localhost:8080/logout")
       .then((res) => {
         if (res.status === 200) {
-          dispatch(userData(undefined));
+          dispatch(userData({}));
           navigate("/login");
           setUser(false);
         }
@@ -128,6 +128,9 @@ export const Header = () => {
                       <h4>
                         {`${users.user.firstName} ${users.user.lastName}`}
                       </h4>
+                      <NavLink to={"/user-profile/"}>
+                      Profile <i className="fa-regular fa-id-card"></i>
+                    </NavLink>
                       <div className="btn">
                         <button onClick={() => handleLogout()}>
                           LOGOUT

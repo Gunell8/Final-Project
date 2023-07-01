@@ -68,25 +68,7 @@
                     color: #fff;
                   }
                 }
-                .editBtn {
-                  padding: 10px 20px;
-                  outline: 0;
-                  width: 45%;
-                  cursor: pointer;
-                  -webkit-transition: all 0.4s;
-                  transition: all 0.4s;
-                  border-radius: 5px;
-                  background-color: rgba(32, 173, 72, 0.493);
-                  border: 1px solid rgba(57, 240, 139, 0.1);
-                  color: #01290e;
-                  box-shadow: 0 1px 3px 0 rgba(145, 247, 199, 0.253);
-                  font-weight: 600;
-                  font-size: 15px;
-                  &:hover {
-                    background-color: #085726e1;
-                    color: #fff;
-                  }
-                }
+                
               }
         }
     }

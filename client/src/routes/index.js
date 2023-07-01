@@ -18,6 +18,7 @@ import SignupPage from "../Pages/site/Register";
 import { Shop } from "../Pages/site/Shop/Shop";
 import CheckoutSuccess from "../Pages/site/Success";
 import ErrorPage from "../Pages/site/error-page";
+import UserProfile from "../Pages/site/user-profile";
 import WishListPage from "../Pages/site/wishlist/wishlist";
 import AdminRoot from "../components/admin/AdminRoot";
 import { MainRoot } from "../components/site/MainRoot";
@@ -35,6 +36,10 @@ export const Router = [
                 {
                     path: "/about",
                     element: <About/>
+                },
+                {
+                    path: "/user-profile",
+                    element: <UserProfile/>
                 },
                 {
                     path: "/gallery",
