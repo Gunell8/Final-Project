@@ -22,6 +22,7 @@ export const deleteusersData = createAsyncThunk("deleteusersData", async (id) =>
 export const updateusersData = createAsyncThunk("updateusersData", async (obj) => {
   await axios.put(`http://localhost:8080/users/${obj.id}`, obj);
   console.log(obj);
+  window.location="/login"
 });
 
 export const getusersDataSlice = createSlice({

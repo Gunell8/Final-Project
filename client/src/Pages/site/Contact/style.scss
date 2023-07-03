@@ -1,12 +1,12 @@
 #contact {
-    background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
-    padding-bottom: 150px;
+  padding-bottom: 150px;
+  background-image: url(../../../assests/images/63199788adbb8e43df69c3ec_pattern-body.png);
   .contact {
     padding-top: 80px;
     padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
     h2 {
       font-family: "Montserrat", sans-serif;
       font-family: "Righteous", cursive;
@@ -17,9 +17,12 @@
     }
   .down{
     display: flex;
-    justify-content: center;
-    gap: 300px;
+    justify-content: space-between;
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      }
     .left{
+      width: 50%;
         .frst{
             p{
                 font-size: 18px;
@@ -76,6 +79,7 @@
         }
     }
     .right{
+  
      button{
         padding: 12px 40px;
         background-color: #000;
@@ -86,6 +90,9 @@
         cursor: pointer;
         border: none;
         margin-top: 20px;
+        @media only screen and (max-width: 768px) {
+        padding: 12px 90px;
+          }
         &:hover{
             box-shadow: 1px 1px 10px 1px black;
           }

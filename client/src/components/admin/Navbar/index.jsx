@@ -47,12 +47,12 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="nav-menu">
-            <Link to={"/admin/add-users"}>
+            {/* <Link to={"/admin/add-users"}>
               <div className="icon">
                 <i className="fa-solid fa-user-plus"></i>
               </div>
               Add Users
-            </Link>
+            </Link> */}
           </li>
           <li  className="nav-menu">
           <Link to={"/admin/contact"}>

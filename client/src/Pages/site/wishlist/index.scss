@@ -69,14 +69,14 @@
           -webkit-transition: all 0.4s;
           transition: all 0.4s;
           border-radius: 5px;
-          background-color: rgba(57, 108, 240, 0.1);
+          background-color: rgba(0, 0, 0, 0.1);
           border: 1px solid rgba(57, 108, 240, 0.1);
-          color: #396cf0;
+          color: #020202;
           -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
           box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
           font-size: 15px;
           &:hover {
-            background-color: #305ccc;
+            background-color: #121213;
             color: #fff;
           }
         }

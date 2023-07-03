@@ -10,6 +10,9 @@ import { useDispatch } from "react-redux";
 import { userData } from "../../../redux/slice/usersDataSlice";
 const LoginPage = () => {
   const [userError, setUserError] = useState(false);
+  const resfreh = () =>{
+    return navigate("/")
+  }
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
@@ -27,9 +30,11 @@ const LoginPage = () => {
           })
           .post("http://localhost:8080/login", values)
           .then((res) => {
+            // const user = response.data.user;
+            // dispatch(setUserData(user));
             dispatch(userData(res.data.user));
             console.log(res.data.user);
-            navigate("/");
+            navigate("/")
           })
           .catch(() => setUserError(true));
         }})
